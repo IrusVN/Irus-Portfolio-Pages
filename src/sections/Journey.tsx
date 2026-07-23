@@ -3,9 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ImageOnlyModal } from "@/components/ImageOnlyModal";
 import { motion } from "framer-motion";
 
-// import fls3nCertificate from "@/assets/certificates/fls3n_certificate.jpg";
-// import limitCertificate from "@/assets/certificates/limit_certificate.jpg";
-
 interface JourneyItem {
   year: string;
   title: string;

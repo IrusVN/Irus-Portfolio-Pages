@@ -58,7 +58,6 @@ function ProjectCard({
               />
             </div>
 
-            {/* Mengubah CardHeader menjadi flex-col & flex-1 agar porsi teks dan konten membagi ruang secara adil */}
             <CardHeader className="w-full p-4 border-t flex-1 flex flex-col justify-between gap-4">
               <div className="flex-1">
                 <CardTitle className="font-extrabold lg:text-2xl">
@@ -70,7 +69,6 @@ function ProjectCard({
                 <CardDescription>{description}</CardDescription>
               </div>
 
-              {/* CardContent akan selalu terdorong ke batas bawah yang sama sebelum tombol */}
               <CardContent className="p-0 flex flex-wrap gap-1 mt-auto">
                 {techStack.map((text, index) => (
                   <span

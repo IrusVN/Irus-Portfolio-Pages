@@ -27,7 +27,6 @@ const menuItems: NavItem[] = [
 function Navbar() {
   return (
     <>
-      {/* Desktop Mode */}
       <nav className="sticky top-0 z-50 w-full border backdrop-blur-3xl backdrop-brightness-50 shadow-md">
         <div className="flex justify-between items-center">
           <div className="hidden md:flex items-center gap-6">
@@ -48,7 +47,6 @@ function Navbar() {
               </NavigationMenu>
             </div>
           </div>
-          {/* Mobile Mode */}
           <div className="flex md:hidden items-center">
             <div className="container items-center">
               <Sheet>
@@ -75,7 +73,6 @@ function Navbar() {
                   side="left"
                   className="w-62.5 bg-zinc-950 border-l border-zinc-900 p-6"
                 >
-                  {/* Tag Title Wajib ada untuk Aksesibilitas Screen Reader */}
                   <SheetTitle className="text-zinc-400 font-mono text-sm mb-6">
                     Menu
                   </SheetTitle>

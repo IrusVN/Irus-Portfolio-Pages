@@ -15,7 +15,6 @@ const getLevelColor = (level: string) => {
   }
 };
 
-// Konfigurasi variant stagger untuk parent grid
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -26,7 +25,6 @@ const containerVariants = {
   },
 };
 
-// Konfigurasi variant scale untuk individual kategori card (ditambahkan as const agar aman dari TS)
 const cardVariants = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: {
@@ -104,7 +102,6 @@ function TechStack() {
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
             {categories.map((category, idx) => (
-              /* Using motion.div as a wrapper so CSS Grid can calculate height correctly */
               <motion.div
                 key={idx}
                 variants={cardVariants}
@@ -112,7 +109,6 @@ function TechStack() {
                 transition={{ type: "spring", duration: 0.3, bounce: 0.2 }}
                 className="h-full w-full custom-card-motion-wrapper"
               >
-                {/* Adding h-full to the Card component to ensure uniform height across the grid */}
                 <Card className="border-zinc-900 bg-zinc-950/50 hover:border-zinc-800 transition-all duration-300 h-full">
                   <CardHeader className="pb-4">
                     <CardTitle className="text-2xl font-mono font-bold text-zinc-200 uppercase tracking-wider">
