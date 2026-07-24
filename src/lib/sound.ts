@@ -1,4 +1,4 @@
-import { Howl } from 'howler'
+import { Howl, Howler } from 'howler'
 
 // Simple Howler wrapper for site sounds.
 // Place your sound files under `/public/sounds/` (e.g. click.webm, click.mp3).
@@ -10,6 +10,7 @@ interface HowlShim {
   once(event: string, fn: (...args: unknown[]) => void): void
   on(event: string, fn: (...args: unknown[]) => void): void
   play(): void
+  stop(): void
   unload(): void
   volume(v: number): void
 }
@@ -65,7 +66,71 @@ export function playClick() {
 export function setGlobalVolume(v: number) {
   // clamp 0..1
   const vol = Math.max(0, Math.min(1, v))
-  clickSound.volume(vol)
+  // set global Howler volume (affects music and sounds)
+  try {
+    // Howler.volume exists on the Howler namespace
+    const h = Howler as unknown as { volume?: (v: number) => void }
+    if (typeof h.volume === 'function') h.volume(vol)
+    else clickSound.volume(vol)
+  } catch {
+    // fallback: set clickSound volume if anything goes wrong
+    clickSound.volume(vol)
+  }
+}
+
+export function setClickVolume(v: number) {
+  const vol = Math.max(0, Math.min(1, v))
+  try {
+    clickSound.volume(vol)
+  } catch {
+    void 0
+  }
+}
+
+// Howler global controls (mute, music playback)
+export function toggleMute() {
+  try {
+    const muted = Howler._muted || false
+    Howler.mute(!muted)
+  } catch (err) {
+    void err
+  }
+}
+
+export function isMuted() {
+  try {
+    const h = Howler as unknown as { _muted?: boolean }
+    return !!h._muted
+  } catch {
+    return false
+  }
+}
+
+let musicHowl: HowlShim | null = null
+export function playMusic(src: string) {
+  try {
+    if (musicHowl) {
+      musicHowl.stop()
+      musicHowl.unload()
+      musicHowl = null
+    }
+    musicHowl = new Howl({ src: [src], loop: true, volume: 0.5 }) as unknown as HowlShim
+    musicHowl.play()
+  } catch (err) {
+    void err
+  }
+}
+
+export function stopMusic() {
+  try {
+    if (musicHowl) {
+      musicHowl.stop()
+      musicHowl.unload()
+      musicHowl = null
+    }
+  } catch (err) {
+    void err
+  }
 }
 
 export function unloadAllSounds() {

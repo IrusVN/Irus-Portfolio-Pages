@@ -11,6 +11,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { Button } from "./ui/button";
+import SettingsDropdown from "@/components/SettingsDropdown"
 import { playClick } from "@/lib/sound";
 
 interface NavItem {
@@ -98,25 +99,30 @@ function Navbar() {
               </Sheet>
             </div>
           </div>
-          <div className="mr-4">
-            <Button
-              className="p-4"
-              onClick={() => {
-                playClick()
-                try {
-                  const el = document.getElementById('contact')
-                  if (el) {
-                    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                  } else {
-                    window.location.hash = '#contact'
+          <div className="mr-4 flex items-center gap-2">
+            <div>
+              <SettingsDropdown />
+            </div>
+            <div>
+              <Button
+                className="p-4"
+                onClick={() => {
+                  playClick()
+                  try {
+                    const el = document.getElementById('contact')
+                    if (el) {
+                      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                    } else {
+                      window.location.hash = '#contact'
+                    }
+                  } catch (e) {
+                    void e
                   }
-                } catch (e) {
-                  void e
-                }
-              }}
-            >
-              Contact Me
-            </Button>
+                }}
+              >
+                Contact Me
+              </Button>
+            </div>
           </div>
         </div>
       </nav>

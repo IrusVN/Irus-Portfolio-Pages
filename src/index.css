@@ -83,6 +83,16 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+/* Sound settings palette */
+:root {
+  --sound-panel-bg: #0f0b10;
+  --sound-panel-surface: #1b0e16;
+  --sound-accent-pink: #ff4db8;
+  --sound-accent-green: #18e18b;
+  --sound-panel-border: rgba(255,77,184,0.25);
+  --sound-text-light: #e6dff0;
+}
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
