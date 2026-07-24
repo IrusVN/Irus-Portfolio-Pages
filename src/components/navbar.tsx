@@ -11,6 +11,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { Button } from "./ui/button";
+import { playClick } from "@/lib/sound";
 
 interface NavItem {
   title: string;
@@ -51,7 +52,12 @@ function Navbar() {
             <div className="container items-center">
               <Sheet>
                 <SheetTrigger>
-                  <button className="p-4 rounded-md hover:bg-zinc-900 text-zinc-400 hover:text-zinc-100 transition-colors">
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    aria-label="Open menu"
+                    className="p-4 rounded-md hover:bg-zinc-900 text-zinc-400 hover:text-zinc-100 transition-colors"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -66,7 +72,7 @@ function Navbar() {
                         d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                       />
                     </svg>
-                  </button>
+                  </div>
                 </SheetTrigger>
 
                 <SheetContent
@@ -92,9 +98,26 @@ function Navbar() {
               </Sheet>
             </div>
           </div>
-          <a href="#contact" className="mr-4">
-            <Button className="p-4">Contact Me</Button>
-          </a>
+          <div className="mr-4">
+            <Button
+              className="p-4"
+              onClick={() => {
+                playClick()
+                try {
+                  const el = document.getElementById('contact')
+                  if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                  } else {
+                    window.location.hash = '#contact'
+                  }
+                } catch (e) {
+                  void e
+                }
+              }}
+            >
+              Contact Me
+            </Button>
+          </div>
         </div>
       </nav>
     </>
