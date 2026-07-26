@@ -2,6 +2,20 @@
 <html lang="en" class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // Apply saved theme before first paint to avoid a flash of wrong theme.
+      // Must match the logic in src/lib/theme.ts (storage key: "irustheme").
+      (function () {
+        try {
+          var stored = localStorage.getItem("irustheme");
+          var dark =
+            stored === "dark" ||
+            (stored !== "light" &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark", dark);
+        } catch (e) {}
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: light)"/>
     <link rel="icon" type="image/svg+xml" href="/favicon-light.svg" media="(prefers-color-scheme: dark)"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

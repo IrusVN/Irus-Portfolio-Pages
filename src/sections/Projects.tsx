@@ -47,7 +47,7 @@ function Projects() {
             <h2 className="text-4xl font-extrabold text-center">Projects</h2>
 
             <Tabs defaultValue="solo" className="w-full">
-              <TabsList className="flex w-full mt-8 mb-3 h-auto! items-stretch border border-zinc-900 bg-zinc-950">
+              <TabsList className="flex w-full mt-8 mb-3 h-auto! items-stretch border border-border bg-background">
                 <TabsTrigger
                   value="solo"
                   className="h-full! flex-1 text-md font-medium transition-all"

@@ -14,19 +14,19 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 bg-zinc-900 border-t-2 border-b-2 text-zinc-100"
+      className="py-20 bg-muted border-t-2 border-b-2 text-foreground"
     >
       <div className="container mx-auto px-4 max-w-xl text-center">
         <div className="space-y-2 mb-10">
-          <h2 className="text-sm font-semibold tracking-wider text-zinc-400 uppercase">
+          <h2 className="text-sm font-semibold tracking-wider text-muted-foreground uppercase">
             Get In Touch
           </h2>
-          <h1 className="text-3xl font-bold text-zinc-100">
+          <h1 className="text-3xl font-bold text-foreground">
             Let's Collaborate
           </h1>
         </div>
 
-        <p className="text-sm text-zinc-400 mb-8 leading-relaxed">
+        <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
           Interested in discussing full-stack development, collaborating on modern web architectures, or just want to connect? Reach out to me via the platforms below:
         </p>
 
@@ -37,15 +37,15 @@ export default function Contact() {
             rel="noopener noreferrer"
             className="group"
           >
-            <Card className="border border-zinc-900 bg-zinc-950/50 hover:border-zinc-800 transition-all duration-300 h-full flex items-center justify-center">
+            <Card className="border border-border bg-background/50 hover:border-foreground/25 transition-all duration-300 h-full flex items-center justify-center">
               <CardContent className="p-6 text-center">
-                <span className="text-xs text-zinc-500 block mb-1">
+                <span className="text-xs text-muted-foreground block mb-1">
                   [Social]
                 </span>
-                <span className="text-base font-bold text-zinc-200 group-hover:text-primary transition-colors">
+                <span className="text-base font-bold text-foreground group-hover:text-primary transition-colors">
                   Instagram
                 </span>
-                <span className="text-[10px] text-zinc-500 block mt-2 group-hover:text-zinc-400">
+                <span className="text-[10px] text-muted-foreground block mt-2 group-hover:text-foreground/70">
                   → Open Profile
                 </span>
               </CardContent>
@@ -57,20 +57,20 @@ export default function Contact() {
             className="group text-left w-full"
           >
             <Card
-              className={`border bg-zinc-950/50 transition-all duration-300 h-full flex items-center justify-center
-              ${copied ? "border-emerald-900/50 bg-emerald-950/5" : "border-zinc-900 hover:border-zinc-800"}`}
+              className={`border bg-background/50 transition-all duration-300 h-full flex items-center justify-center
+              ${copied ? "border-emerald-400 bg-emerald-100/20 dark:border-emerald-900/50 dark:bg-emerald-950/5" : "border-border hover:border-foreground/25"}`}
             >
               <CardContent className="p-6 text-center w-full">
-                <span className="text-xs text-zinc-500 block mb-1">
+                <span className="text-xs text-muted-foreground block mb-1">
                   [Community]
                 </span>
                 <span
-                  className={`text-base font-bold transition-colors ${copied ? "text-emerald-400" : "text-zinc-200 group-hover:text-primary"}`}
+                  className={`text-base font-bold transition-colors ${copied ? "text-emerald-600 dark:text-emerald-400" : "text-foreground group-hover:text-primary"}`}
                 >
                   Discord
                 </span>
                 <span
-                  className={`text-[10px] block mt-2 font-mono transition-colors ${copied ? "text-emerald-500" : "text-zinc-500 group-hover:text-zinc-400"}`}
+                  className={`text-[10px] block mt-2 font-mono transition-colors ${copied ? "text-emerald-600 dark:text-emerald-500" : "text-muted-foreground group-hover:text-foreground/70"}`}
                 >
                   {copied ? "[Copied!]" : "→ Copy Username"}
                 </span>

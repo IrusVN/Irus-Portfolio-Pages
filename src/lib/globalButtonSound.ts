@@ -6,7 +6,6 @@ export function initGlobalButtonSound() {
   const handler = (e: MouseEvent) => {
     try {
       // Only respond to primary mouse button
-      // @ts-expect-error DOM types
       if (e.button && e.button !== 0) return
 
       const target = (e.target as Element | null)

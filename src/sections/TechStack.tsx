@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 const getLevelColor = (level: string) => {
   switch (level.toLowerCase()) {
     case "advanced":
-      return "text-emerald-400 bg-emerald-950/40 border-emerald-900/50";
+      return "text-emerald-700 bg-emerald-100/60 border-emerald-300 dark:text-emerald-400 dark:bg-emerald-950/40 dark:border-emerald-900/50";
     case "intermediate":
-      return "text-amber-400 bg-amber-950/40 border-amber-900/50";
+      return "text-amber-700 bg-amber-100/60 border-amber-300 dark:text-amber-400 dark:bg-amber-950/40 dark:border-amber-900/50";
     case "familiar":
     case "beginner":
-      return "text-zinc-400 bg-zinc-900 text-zinc-500 border-zinc-800";
+      return "text-muted-foreground bg-muted border-border";
     default:
-      return "text-zinc-500 bg-zinc-900 border-zinc-800";
+      return "text-muted-foreground bg-muted border-border";
   }
 };
 
@@ -86,9 +86,9 @@ function TechStack() {
   return (
     <>
       <section id="techstack">
-        <div className="relative flex pt-14 pb-14 pr-16 pl-16 md:pr-28 md:pl-28 flex-col justify-between w-full gap-8 bg-zinc-900 border-t-2 border-b-2">
+        <div className="relative flex pt-14 pb-14 pr-16 pl-16 md:pr-28 md:pl-28 flex-col justify-between w-full gap-8 bg-muted border-t-2 border-b-2">
           <div className="flex flex-col items-baseline text-left md:items-start tracking-wide">
-            <h2 className="text-1xl font-extralight text-primary-foreground">
+            <h2 className="text-1xl font-extralight text-foreground">
               Technical Expertise
             </h2>
             <h1 className="text-4xl font-extrabold">Tech Stack</h1>
@@ -109,9 +109,9 @@ function TechStack() {
                 transition={{ type: "spring", duration: 0.3, bounce: 0.2 }}
                 className="h-full w-full custom-card-motion-wrapper"
               >
-                <Card className="border-zinc-900 bg-zinc-950/50 hover:border-zinc-800 transition-all duration-300 h-full">
+                <Card className="border-border bg-background/50 hover:border-foreground/25 transition-all duration-300 h-full">
                   <CardHeader className="pb-4">
-                    <CardTitle className="text-2xl font-mono font-bold text-zinc-200 uppercase tracking-wider">
+                    <CardTitle className="text-2xl font-mono font-bold text-foreground uppercase tracking-wider">
                       {category.title}
                     </CardTitle>
                   </CardHeader>
@@ -119,9 +119,9 @@ function TechStack() {
                     {category.skills.map((skill, sIdx) => (
                       <div
                         key={sIdx}
-                        className="flex items-center justify-between font-mono bg-zinc-900/40 border border-zinc-900 px-3 py-2 rounded-md hover:border-zinc-800 transition-colors"
+                        className="flex items-center justify-between font-mono bg-muted/40 border border-border px-3 py-2 rounded-md hover:border-foreground/25 transition-colors"
                       >
-                        <span className="text-sm font-medium text-zinc-300">
+                        <span className="text-sm font-medium text-foreground/80">
                           {skill.name}
                         </span>
 

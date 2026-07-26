@@ -48,9 +48,9 @@ function ProjectCard({
         transition={{ type: "spring", duration: 0.3, bounce: 0.2 }}
         className="h-full w-full group"
       >
-        <Card className="bg-zinc-900 items-center py-0 border gap-0 hover:border-zinc-600 h-full flex flex-col justify-between">
+        <Card className="bg-card items-center py-0 border gap-0 hover:border-foreground/30 h-full flex flex-col justify-between">
           <div className="w-full flex-1 flex flex-col h-full">
-            <div className="relative h-48 w-full overflow-hidden bg-zinc-900">
+            <div className="relative h-48 w-full overflow-hidden bg-muted">
               <img
                 src={imageUrl}
                 alt={`${title} screenshot`}
@@ -63,7 +63,7 @@ function ProjectCard({
                 <CardTitle className="font-extrabold lg:text-2xl">
                   {title}
                 </CardTitle>
-                <h2 className="font-extralight text-xs text-zinc-300 mb-4">
+                <h2 className="font-extralight text-xs text-muted-foreground mb-4">
                   {year}
                 </h2>
                 <CardDescription>{description}</CardDescription>
@@ -83,7 +83,7 @@ function ProjectCard({
           </div>
 
           <div className="w-full p-4 pt-0">
-            <CardFooter className="flex justify-end p-0 bg-zinc 900 border-0 gap-2 w-full">
+            <CardFooter className="flex justify-end p-0 border-0 gap-2 w-full">
               {githubUrl && (
                 <a href={githubUrl} target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" className="px-6 py-5">

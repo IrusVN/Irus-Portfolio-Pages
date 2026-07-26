@@ -111,7 +111,7 @@ export default function Journey() {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="relative border-l border-zinc-900 ml-4 mt-6 space-y-8"
+      className="relative border-l border-border ml-4 mt-6 space-y-8"
     >
       {items.map((item, index) => (
         <motion.div
@@ -125,23 +125,23 @@ export default function Journey() {
             className={`absolute -left-2.25 top-1.5 h-4 w-4 rounded-full border-4 transition-colors duration-300
             ${
               item.isHighlight
-                ? "bg-amber-400 border-zinc-950 group-hover:bg-amber-300"
-                : "bg-zinc-800 border-zinc-950 group-hover:bg-primary"
+                ? "bg-amber-400 border-background group-hover:bg-amber-300"
+                : "bg-muted-foreground/40 border-background group-hover:bg-primary"
             }`}
           />
 
           <Card
-            className={`border bg-zinc-950/50 transition-all duration-300
+            className={`border bg-card/50 transition-all duration-300
             ${
               item.isHighlight
-                ? "border-amber-900/40 bg-amber-950/5 hover:border-amber-800/60"
-                : "border-zinc-900 hover:border-zinc-800"
+                ? "border-amber-300/70 bg-amber-100/20 hover:border-amber-400 dark:border-amber-900/40 dark:bg-amber-950/5 dark:hover:border-amber-800/60"
+                : "border-border hover:border-foreground/25"
             }`}
           >
             <CardContent className="p-5 font-mono">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                 <span
-                  className={`text-sm font-bold ${item.isHighlight ? "text-amber-400" : "text-zinc-500"}`}
+                  className={`text-sm font-bold ${item.isHighlight ? "text-amber-600 dark:text-amber-400" : "text-muted-foreground"}`}
                 >
                   {item.year}
                 </span>
@@ -150,8 +150,8 @@ export default function Journey() {
                     className={`text-[10px] uppercase tracking-wider px-2 py-0.5 rounded border 
                     ${
                       item.isHighlight
-                        ? "bg-amber-900/30 text-amber-300 border-amber-800/50"
-                        : "bg-zinc-900 text-zinc-400 border-zinc-800"
+                        ? "bg-amber-100/60 text-amber-700 border-amber-300 dark:bg-amber-900/30 dark:text-amber-300 dark:border-amber-800/50"
+                        : "bg-muted text-muted-foreground border-border"
                     }`}
                   >
                     {item.badgeText}
@@ -160,16 +160,16 @@ export default function Journey() {
               </div>
 
               <h3
-                className={`text-lg font-bold ${item.isHighlight ? "text-amber-100" : "text-zinc-200"}`}
+                className={`text-lg font-bold ${item.isHighlight ? "text-amber-800 dark:text-amber-100" : "text-foreground"}`}
               >
                 {item.title}
               </h3>
 
               {item.subtitle && (
-                <p className="text-xs text-zinc-500 mt-0.5">{item.subtitle}</p>
+                <p className="text-xs text-muted-foreground mt-0.5">{item.subtitle}</p>
               )}
 
-              <p className="text-xs text-zinc-405 mt-3 leading-relaxed">
+              <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
                 {item.description}
               </p>
 
@@ -191,7 +191,7 @@ export default function Journey() {
                       className={`mt-3 text-xs font-mono px-3 py-1.5 rounded-md border transition-colors w-fit 
                     ${
                       item.isHighlight
-                        ? "text-amber-400 border-amber-900/30 bg-amber-950/20 hover:bg-amber-950/50 hover:border-amber-800"
+                        ? "text-amber-700 border-amber-300 bg-amber-100/40 hover:bg-amber-100 hover:border-amber-400 dark:text-amber-400 dark:border-amber-900/30 dark:bg-amber-950/20 dark:hover:bg-amber-950/50 dark:hover:border-amber-800"
                         : ""
                     }`}
                     >
@@ -211,18 +211,18 @@ export default function Journey() {
     <>
       <section
         id="journey"
-        className="py-20 bg-zinc-950 text-zinc-100 border-b border-zinc-900"
+        className="py-20 bg-background text-foreground border-b border-border"
       >
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="space-y-2 mb-10">
-            <h2 className="text-sm font-semibold tracking-wider text-zinc-400 uppercase">
+            <h2 className="text-sm font-semibold tracking-wider text-muted-foreground uppercase">
               Timeline & History
             </h2>
-            <h1 className="text-3xl font-bold text-zinc-100">My Journey</h1>
+            <h1 className="text-3xl font-bold text-foreground">My Journey</h1>
           </div>
 
           <Tabs defaultValue="dev" className="w-full">
-            <TabsList className="flex w-full mt-8 mb-3 h-auto! items-stretch border border-zinc-900 bg-zinc-950">
+            <TabsList className="flex w-full mt-8 mb-3 h-auto! items-stretch border border-border bg-background">
               <TabsTrigger
                 value="dev"
                 className="h-full! flex-1 text-md font-medium transition-all"

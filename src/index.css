@@ -83,6 +83,17 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+/* Hero background (grid pattern + radial vignette) */
+:root {
+  --hero-grid-line: rgba(63, 63, 70, 0.12);
+  --hero-vignette: #ffffff;
+}
+
+.dark {
+  --hero-grid-line: rgba(63, 63, 70, 0.15);
+  --hero-vignette: #09090b;
+}
+
 /* Sound settings palette */
 :root {
   --sound-panel-bg: #0f0b10;
@@ -91,6 +102,11 @@
   --sound-accent-green: #18e18b;
   --sound-panel-border: rgba(255,77,184,0.25);
   --sound-text-light: #e6dff0;
+  --slider-track-rest: rgba(0, 0, 0, 0.12);
+}
+
+.dark {
+  --slider-track-rest: rgba(255, 255, 255, 0.1);
 }
 
 .dark {

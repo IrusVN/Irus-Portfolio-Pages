@@ -114,13 +114,13 @@ function App() {
         {phase === "loading" && (
           <motion.div
             key="game-loader"
-            className="fixed inset-0 bg-zinc-950 flex flex-col items-center justify-center z-50 font-mono px-6"
+            className="fixed inset-0 bg-background flex flex-col items-center justify-center z-50 font-mono px-6"
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
             <div className="w-full max-w-md space-y-4">
               <div className="flex justify-between text-sm tracking-wider font-semibold">
-                <span className="text-zinc-400 animate-pulse">
+                <span className="text-muted-foreground animate-pulse">
                   {progress < 30 && "[LOADING_CORE_ENGINE...]"}
                   {progress >= 30 && progress < 65 && "[LOADING_ASSETS...]"}
                   {progress >= 65 && progress < 80 && "[COMPILING_SCRIPTS...]"}
@@ -135,7 +135,7 @@ function App() {
                 </span>
               </div>
 
-              <div className="w-full h-3.5 bg-zinc-900 border border-zinc-800 rounded-none overflow-hidden p-0.75">
+              <div className="w-full h-3.5 bg-muted border border-border rounded-none overflow-hidden p-0.75">
                 <motion.div
                   className="h-full bg-primary"
                   initial={{ width: "0%" }}
@@ -144,7 +144,7 @@ function App() {
                 />
               </div>
 
-              <div className="text-[11px] text-zinc-600 text-center uppercase tracking-widest font-medium">
+              <div className="text-[11px] text-muted-foreground/70 text-center uppercase tracking-widest font-medium">
                 System Status: Secure
               </div>
             </div>
@@ -154,7 +154,7 @@ function App() {
         {phase === "greeting" && (
           <motion.div
             key="game-greeting"
-            className="fixed inset-0 bg-zinc-950 flex items-center justify-center z-50 font-sans px-6"
+            className="fixed inset-0 bg-background flex items-center justify-center z-50 font-sans px-6"
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5, ease: "easeIn" }}
           >
@@ -164,7 +164,7 @@ function App() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="text-4xl md:text-6xl font-bold text-zinc-100 tracking-tight"
+              className="text-4xl md:text-6xl font-bold text-foreground tracking-tight"
             >
               {greetings[currentGreetingIndex]}
               {currentGreetingIndex === greetings.length - 1 && (
@@ -180,7 +180,7 @@ function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="bg-zinc-950 min-h-screen selection:bg-primary/20 selection:text-primary-foreground"
+            className="bg-background min-h-screen selection:bg-primary/20 selection:text-primary"
           >
             <Navbar />
 

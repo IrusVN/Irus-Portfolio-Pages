@@ -26,29 +26,29 @@ function Hero() {
     <>
       <section
         id="home"
-        className="relative flex min-h-[80vh] w-full items-center justify-center overflow-hidden bg-zinc-950 px-6 py-12 md:px-12"
+        className="relative flex min-h-[80vh] w-full items-center justify-center overflow-hidden bg-background px-6 py-12 md:px-12"
         style={{
           backgroundImage: `
-          linear-gradient(to right, rgba(63, 63, 70, 0.15) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(63, 63, 70, 0.15) 1px, transparent 1px)
+          linear-gradient(to right, var(--hero-grid-line) 1px, transparent 1px),
+          linear-gradient(to bottom, var(--hero-grid-line) 1px, transparent 1px)
         `,
           backgroundSize: "60px 60px",
         }}
       >
-        <div className="pointer-events-none absolute inset-0 bg-radial-[circle_at_center,transparent_20%,#09090b_80%]"></div>
+        <div className="pointer-events-none absolute inset-0 bg-radial-[circle_at_center,transparent_20%,var(--hero-vignette)_80%]"></div>
 
         <div className="relative z-10 mx-auto flex max-w-6xl flex-col-reverse items-center justify-between gap-12 md:flex-row w-full">
           <div className="flex flex-col items-baseline text-left md:items-start md:w-1/2 gap-4  tracking-wide">
-            <h2 className="text-1xl text-primary-foreground">
+            <h2 className="text-1xl text-foreground">
               Known as Irus_
             </h2>
             <h1 className="whitespace-nowrap text-6xl font-extrabold">Mai Lê Huy Hoàng</h1>
-            <div className="text-1xl font-mono text-zinc-300 sm:text-2xl h-10 flex items-center">
+            <div className="text-1xl font-mono text-muted-foreground sm:text-2xl h-10 flex items-center">
               <span className="text-primary mr-2">&gt;</span>
               <AnimatePresence mode="wait">
                 <motion.span
                   key={index}
-                  className="text-primary-foreground font-extrabold flex items-center"
+                  className="text-foreground font-extrabold flex items-center"
                 >
                   {words[index].split("").map((char, charIndex) => (
                     <motion.span
@@ -71,12 +71,12 @@ function Hero() {
                       repeat: Infinity,
                       ease: "linear",
                     }}
-                    className="ml-0.5 inline-block w-3 h-6 bg-zinc-400"
+                    className="ml-0.5 inline-block w-3 h-6 bg-muted-foreground"
                   />
                 </motion.span>
               </AnimatePresence>
             </div>
-            <p className=" max-w-xl text-base text-zinc-400 font-mono leading-relaxed text-left">
+            <p className=" max-w-xl text-base text-muted-foreground font-mono leading-relaxed text-left">
               "Architecting dynamic web applications and AI-driven solutions. Translating complex technical logic into engaging user experiences."
             </p>
             <div className="flex gap-2">
@@ -92,9 +92,9 @@ function Hero() {
           </div>
           <div className="flex md:w-1/2 justify-end items-center">
             <div className="relative group w-64 h-64 sm:w-80 sm:h-80">
-              <div className="absolute inset-0 rounded-2xl bg-zinc-900 border border-zinc-800 transform rotate-3 group-hover:rotate-6 transition-transform duration-300" />
+              <div className="absolute inset-0 rounded-2xl bg-card border border-border transform rotate-3 group-hover:rotate-6 transition-transform duration-300" />
 
-              <div className="absolute inset-0 rounded-2xl overflow-hidden border-2 border-zinc-800 bg-zinc-950 transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+              <div className="absolute inset-0 rounded-2xl overflow-hidden border-2 border-border bg-background transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                 <img
                   src={me}
                   alt="Irus Portfolio Profile"

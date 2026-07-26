@@ -11,6 +11,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { Button } from "./ui/button";
+import ThemeToggle from "@/components/ThemeToggle"
 import SettingsDropdown from "@/components/SettingsDropdown"
 import { playClick } from "@/lib/sound";
 
@@ -29,7 +30,7 @@ const menuItems: NavItem[] = [
 function Navbar() {
   return (
     <>
-      <nav className="sticky top-0 z-50 w-full border backdrop-blur-3xl backdrop-brightness-50 shadow-md">
+      <nav className="sticky top-0 z-50 w-full border bg-background/70 backdrop-blur-3xl shadow-md">
         <div className="flex justify-between items-center">
           <div className="hidden md:flex items-center gap-6">
             <div className="container mx-auto flex h-16 items-center justify-between px-4">
@@ -57,7 +58,7 @@ function Navbar() {
                     role="button"
                     tabIndex={0}
                     aria-label="Open menu"
-                    className="p-4 rounded-md hover:bg-zinc-900 text-zinc-400 hover:text-zinc-100 transition-colors"
+                    className="p-4 rounded-md hover:bg-accent text-muted-foreground hover:text-foreground transition-colors"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -78,9 +79,9 @@ function Navbar() {
 
                 <SheetContent
                   side="left"
-                  className="w-62.5 bg-zinc-950 border-l border-zinc-900 p-6"
+                  className="w-62.5 bg-background border-l border-border p-6"
                 >
-                  <SheetTitle className="text-zinc-400 font-mono text-sm mb-6">
+                  <SheetTitle className="text-muted-foreground font-mono text-sm mb-6">
                     Menu
                   </SheetTitle>
 
@@ -89,7 +90,7 @@ function Navbar() {
                       <a
                         key={index}
                         href={item.href}
-                        className="text-lg font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900 px-3 py-2 rounded-md transition-all duration-200"
+                        className="text-lg font-medium text-muted-foreground hover:text-foreground hover:bg-accent px-3 py-2 rounded-md transition-all duration-200"
                       >
                         {item.title}
                       </a>
@@ -100,6 +101,9 @@ function Navbar() {
             </div>
           </div>
           <div className="mr-4 flex items-center gap-2">
+            <div>
+              <ThemeToggle />
+            </div>
             <div>
               <SettingsDropdown />
             </div>

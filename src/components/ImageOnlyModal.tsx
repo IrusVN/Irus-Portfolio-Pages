@@ -8,7 +8,7 @@ interface ImageOnlyModalProps {
 
 function getColor(isAchievement: boolean) {
   if (isAchievement) {
-    return `text-amber-400 border-amber-900/30 bg-amber-950/20 hover:bg-amber-950/50 hover:border-amber-800`;
+    return `text-amber-700 border-amber-300 bg-amber-100/40 hover:bg-amber-100 hover:border-amber-400 dark:text-amber-400 dark:border-amber-900/30 dark:bg-amber-950/20 dark:hover:bg-amber-950/50 dark:hover:border-amber-800`;
   } else {
     return ``;
   }
@@ -29,8 +29,8 @@ export function ImageOnlyModal({
         </button>
       </DialogTrigger>
 
-      <DialogContent className="sm:max-w-175 border-zinc-900 bg-zinc-950 p-2 text-zinc-100 overflow-hidden">
-        <div className="relative w-full overflow-hidden rounded-md bg-zinc-900 aspect-4/3 sm:aspect-16/10">
+      <DialogContent className="sm:max-w-175 border-border bg-background p-2 text-foreground overflow-hidden">
+        <div className="relative w-full overflow-hidden rounded-md bg-muted aspect-4/3 sm:aspect-16/10">
           <img
             src={imageUrl}
             alt={altText}
