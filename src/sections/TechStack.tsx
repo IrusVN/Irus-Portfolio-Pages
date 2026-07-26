@@ -1,15 +1,15 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
-const getLevelColor = (level: string) => {
-  switch (level.toLowerCase()) {
+type SkillLevel = "advanced" | "intermediate" | "familiar" | "beginner";
+
+const getLevelColor = (level: SkillLevel) => {
+  switch (level) {
     case "advanced":
       return "text-emerald-700 bg-emerald-100/60 border-emerald-300 dark:text-emerald-400 dark:bg-emerald-950/40 dark:border-emerald-900/50";
     case "intermediate":
       return "text-amber-700 bg-amber-100/60 border-amber-300 dark:text-amber-400 dark:bg-amber-950/40 dark:border-amber-900/50";
-    case "familiar":
-    case "beginner":
-      return "text-muted-foreground bg-muted border-border";
     default:
       return "text-muted-foreground bg-muted border-border";
   }
@@ -38,50 +38,61 @@ const cardVariants = {
 };
 
 function TechStack() {
-  const categories = [
+  const { t } = useTranslation();
+  const categoryTitles = t("techStack.categories", { returnObjects: true }) as string[];
+
+  // Skill names are tech terms — untranslated; category titles and levels come from the dictionary
+  const categories: { title: string; skills: { name: string; level: SkillLevel }[] }[] = [
     {
-      title: "Programming Languages",
+      title: categoryTitles[0],
       skills: [
-        { name: "PHP", level: "Advanced" },
-        { name: "JavaScript / TypeScript", level: "Advanced" },
-        { name: "Python", level: "Intermediate" },
-        { name: "HTML / CSS", level: "Advanced" },
+        { name: "PHP", level: "advanced" },
+        { name: "JavaScript / TypeScript", level: "advanced" },
+        { name: "Python", level: "intermediate" },
+        { name: "HTML / CSS", level: "advanced" },
       ],
     },
     {
-      title: "Frameworks & Libraries",
+      title: categoryTitles[1],
       skills: [
-        { name: "Nuxt.js", level: "Advanced" },
-        { name: "Laravel", level: "Advanced" },
-        { name: "Vue.js", level: "Advanced" },
-        { name: "FastAPI", level: "Intermediate" },
+        { name: "Nuxt.js", level: "advanced" },
+        { name: "Laravel", level: "advanced" },
+        { name: "Vue.js", level: "advanced" },
+        { name: "FastAPI", level: "intermediate" },
       ],
     },
     {
-      title: "Databases & AI",
+      title: categoryTitles[2],
       skills: [
-        { name: "PostgreSQL", level: "Advanced" },
-        { name: "Supabase", level: "Intermediate" },
-        { name: "LLMs / AI Agents", level: "Intermediate" },
+        { name: "PostgreSQL", level: "advanced" },
+        { name: "Supabase", level: "intermediate" },
+        { name: "LLMs / AI Agents", level: "intermediate" },
       ],
     },
     {
-      title: "Infrastructure & DevOps",
+      title: categoryTitles[3],
       skills: [
-        { name: "Git / GitHub", level: "Advanced" },
-        { name: "DigitalOcean", level: "Intermediate" },
-        { name: "Coolify", level: "Intermediate" },
+        { name: "Git / GitHub", level: "advanced" },
+        { name: "DigitalOcean", level: "intermediate" },
+        { name: "Coolify", level: "intermediate" },
       ],
     },
     {
-      title: "Environment & Tools",
+      title: categoryTitles[4],
       skills: [
-        { name: "WSL 2 (Windows 11)", level: "Advanced" },
-        { name: "Laragon", level: "Advanced" },
-        { name: "Ollama / Claude Code", level: "Intermediate" },
+        { name: "WSL 2 (Windows 11)", level: "advanced" },
+        { name: "Laragon", level: "advanced" },
+        { name: "Ollama / Claude Code", level: "intermediate" },
       ],
     },
   ];
+
+  const levelLabels: Record<SkillLevel, string> = {
+    advanced: t("techStack.levels.advanced"),
+    intermediate: t("techStack.levels.intermediate"),
+    familiar: t("techStack.levels.familiar"),
+    beginner: t("techStack.levels.beginner"),
+  };
 
   return (
     <>
@@ -89,9 +100,9 @@ function TechStack() {
         <div className="relative flex pt-14 pb-14 pr-16 pl-16 md:pr-28 md:pl-28 flex-col justify-between w-full gap-8 bg-muted border-t-2 border-b-2">
           <div className="flex flex-col items-baseline text-left md:items-start tracking-wide">
             <h2 className="text-1xl font-extralight text-foreground">
-              Technical Expertise
+              {t("techStack.label")}
             </h2>
-            <h1 className="text-4xl font-extrabold">Tech Stack</h1>
+            <h1 className="text-4xl font-extrabold">{t("techStack.title")}</h1>
           </div>
 
           <motion.div
@@ -128,7 +139,7 @@ function TechStack() {
                         <span
                           className={`text-[10px] uppercase tracking-wider px-2 py-0.5 rounded border transition-colors ${getLevelColor(skill.level)}`}
                         >
-                          {skill.level}
+                          {levelLabels[skill.level]}
                         </span>
                       </div>
                     ))}

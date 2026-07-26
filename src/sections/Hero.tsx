@@ -1,18 +1,13 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import me from "@/assets/irus.jpeg";
 import { Button } from "@/components/ui/button";
 
 function Hero() {
-  const words = [
-    "Web Programmer",
-    "IT Enthusiast",
-    "Solo Game Developer",
-    "Creative Editor",
-    "Full Stack Developer",
-    "AI Integration Developer",
-  ];
+  const { t } = useTranslation();
+  const words = t("hero.roles", { returnObjects: true }) as string[];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -40,7 +35,7 @@ function Hero() {
         <div className="relative z-10 mx-auto flex max-w-6xl flex-col-reverse items-center justify-between gap-12 md:flex-row w-full">
           <div className="flex flex-col items-baseline text-left md:items-start md:w-1/2 gap-4  tracking-wide">
             <h2 className="text-1xl text-foreground">
-              Known as Irus_
+              {t("hero.knownAs")}
             </h2>
             <h1 className="whitespace-nowrap text-6xl font-extrabold">Mai Lê Huy Hoàng</h1>
             <div className="text-1xl font-mono text-muted-foreground sm:text-2xl h-10 flex items-center">
@@ -50,7 +45,7 @@ function Hero() {
                   key={index}
                   className="text-foreground font-extrabold flex items-center"
                 >
-                  {words[index].split("").map((char, charIndex) => (
+                  {(words[index] ?? "").split("").map((char, charIndex) => (
                     <motion.span
                       key={charIndex}
                       initial={{ display: "none" }}
@@ -77,15 +72,15 @@ function Hero() {
               </AnimatePresence>
             </div>
             <p className=" max-w-xl text-base text-muted-foreground font-mono leading-relaxed text-left">
-              "Architecting dynamic web applications and AI-driven solutions. Translating complex technical logic into engaging user experiences."
+              {t("hero.tagline")}
             </p>
             <div className="flex gap-2">
               <a href="#contact">
-                <Button className="p-6">Contact Me</Button>
+                <Button className="p-6">{t("hero.contactMe")}</Button>
               </a>
               <a href="#projects">
                 <Button variant="secondary" className="p-6">
-                  Explore Projects
+                  {t("hero.exploreProjects")}
                 </Button>
               </a>
             </div>

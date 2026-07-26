@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.tsx'
 import { initGlobalButtonSound } from '@/lib/globalButtonSound'
 import { applyTheme, getPreferredTheme } from '@/lib/theme'
+import '@/i18n'
 
 applyTheme(getPreferredTheme())
 

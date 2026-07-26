@@ -13,21 +13,25 @@ import {
 import { Button } from "./ui/button";
 import ThemeToggle from "@/components/ThemeToggle"
 import SettingsDropdown from "@/components/SettingsDropdown"
+import LanguageSwitcher from "@/components/LanguageSwitcher"
 import { playClick } from "@/lib/sound";
+import { useTranslation } from "react-i18next";
 
 interface NavItem {
   title: string;
   href: string;
 }
 
-const menuItems: NavItem[] = [
-  { title: "About", href: "#aboutme" },
-  { title: "Projects", href: "#projects" },
-  { title: "Tech Stack", href: "#techstack" },
-  { title: "Journey", href: "#journey" },
-];
-
 function Navbar() {
+  const { t } = useTranslation();
+
+  const menuItems: NavItem[] = [
+    { title: t("nav.about"), href: "#aboutme" },
+    { title: t("nav.projects"), href: "#projects" },
+    { title: t("nav.techStack"), href: "#techstack" },
+    { title: t("nav.journey"), href: "#journey" },
+  ];
+
   return (
     <>
       <nav className="sticky top-0 z-50 w-full border bg-background/70 backdrop-blur-3xl shadow-md">
@@ -57,7 +61,7 @@ function Navbar() {
                   <div
                     role="button"
                     tabIndex={0}
-                    aria-label="Open menu"
+                    aria-label={t("nav.openMenu")}
                     className="p-4 rounded-md hover:bg-accent text-muted-foreground hover:text-foreground transition-colors"
                   >
                     <svg
@@ -82,7 +86,7 @@ function Navbar() {
                   className="w-62.5 bg-background border-l border-border p-6"
                 >
                   <SheetTitle className="text-muted-foreground font-mono text-sm mb-6">
-                    Menu
+                    {t("nav.menu")}
                   </SheetTitle>
 
                   <div className="flex flex-col gap-4 mt-4">
@@ -101,6 +105,9 @@ function Navbar() {
             </div>
           </div>
           <div className="mr-4 flex items-center gap-2">
+            <div>
+              <LanguageSwitcher />
+            </div>
             <div>
               <ThemeToggle />
             </div>
@@ -124,7 +131,7 @@ function Navbar() {
                   }
                 }}
               >
-                Contact Me
+                {t("nav.contactMe")}
               </Button>
             </div>
           </div>

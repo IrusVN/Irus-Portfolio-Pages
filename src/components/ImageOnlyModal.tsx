@@ -1,4 +1,5 @@
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { useTranslation } from "react-i18next";
 
 interface ImageOnlyModalProps {
   imageUrl: string;
@@ -19,13 +20,15 @@ export function ImageOnlyModal({
   altText,
   isAchievement = false,
 }: ImageOnlyModalProps) {
+  const { t } = useTranslation();
+
   return (
     <Dialog>
       <DialogTrigger>
         <button
           className={`mt-3 text-xs font-mono px-3 py-1.5 rounded-md border transition-colors w-fit ${getColor(isAchievement)}`}
         >
-          View Image / Certificate
+          {t("journey.viewImage")}
         </button>
       </DialogTrigger>
 

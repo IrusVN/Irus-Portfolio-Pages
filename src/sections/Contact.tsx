@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Contact() {
+  const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
   const discordUsername = "hoangmai.";
 
@@ -19,15 +21,15 @@ export default function Contact() {
       <div className="container mx-auto px-4 max-w-xl text-center">
         <div className="space-y-2 mb-10">
           <h2 className="text-sm font-semibold tracking-wider text-muted-foreground uppercase">
-            Get In Touch
+            {t("contact.label")}
           </h2>
           <h1 className="text-3xl font-bold text-foreground">
-            Let's Collaborate
+            {t("contact.title")}
           </h1>
         </div>
 
         <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
-          Interested in discussing full-stack development, collaborating on modern web architectures, or just want to connect? Reach out to me via the platforms below:
+          {t("contact.body")}
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -40,13 +42,13 @@ export default function Contact() {
             <Card className="border border-border bg-background/50 hover:border-foreground/25 transition-all duration-300 h-full flex items-center justify-center">
               <CardContent className="p-6 text-center">
                 <span className="text-xs text-muted-foreground block mb-1">
-                  [Social]
+                  {t("contact.social")}
                 </span>
                 <span className="text-base font-bold text-foreground group-hover:text-primary transition-colors">
                   Instagram
                 </span>
                 <span className="text-[10px] text-muted-foreground block mt-2 group-hover:text-foreground/70">
-                  → Open Profile
+                  {t("contact.openProfile")}
                 </span>
               </CardContent>
             </Card>
@@ -62,7 +64,7 @@ export default function Contact() {
             >
               <CardContent className="p-6 text-center w-full">
                 <span className="text-xs text-muted-foreground block mb-1">
-                  [Community]
+                  {t("contact.community")}
                 </span>
                 <span
                   className={`text-base font-bold transition-colors ${copied ? "text-emerald-600 dark:text-emerald-400" : "text-foreground group-hover:text-primary"}`}
@@ -72,7 +74,7 @@ export default function Contact() {
                 <span
                   className={`text-[10px] block mt-2 font-mono transition-colors ${copied ? "text-emerald-600 dark:text-emerald-500" : "text-muted-foreground group-hover:text-foreground/70"}`}
                 >
-                  {copied ? "[Copied!]" : "→ Copy Username"}
+                  {copied ? t("contact.copied") : t("contact.copyUsername")}
                 </span>
               </CardContent>
             </Card>

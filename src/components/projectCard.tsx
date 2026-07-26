@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 interface ProjectCardProps {
   title: string;
@@ -40,6 +41,8 @@ function ProjectCard({
   projectUrl,
   githubUrl,
 }: ProjectCardProps) {
+  const { t } = useTranslation();
+
   return (
     <>
       <motion.div
@@ -92,7 +95,7 @@ function ProjectCard({
                 </a>
               )}
               <a href={projectUrl} target="_blank" rel="noopener noreferrer">
-                <Button className="px-6 py-5">Open</Button>
+                <Button className="px-6 py-5">{t("projects.card.open")}</Button>
               </a>
             </CardFooter>
           </div>

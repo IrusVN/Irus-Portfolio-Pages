@@ -2,11 +2,13 @@
 
 import * as React from "react"
 import { MoonStar, SunMedium } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 import { Button } from "@/components/ui/button"
 import { applyTheme, getPreferredTheme, type ThemeMode } from "@/lib/theme"
 
 export default function ThemeToggle() {
+  const { t } = useTranslation()
   // Theme is already applied in main.tsx before render — just read it here
   const [theme, setTheme] = React.useState<ThemeMode>(() => getPreferredTheme())
 
@@ -24,7 +26,7 @@ export default function ThemeToggle() {
       size="icon-sm"
       className="group relative p-2 transition-colors hover:bg-primary/15 hover:text-primary active:bg-primary/25 active:text-primary"
       onClick={handleToggle}
-      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      aria-label={isDark ? t("theme.switchToLight") : t("theme.switchToDark")}
       aria-pressed={isDark}
     >
       <SunMedium

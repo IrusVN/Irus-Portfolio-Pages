@@ -1,11 +1,13 @@
 "use client"
 
 import * as React from "react"
+import { useTranslation } from "react-i18next"
 import { Button } from "@/components/ui/button"
 import { Music } from "lucide-react"
 import { playMusic, stopMusic, setGlobalVolume, setClickVolume, toggleMute, isMuted } from "@/lib/sound"
 
 export default function SettingsDropdown() {
+  const { t } = useTranslation()
   const [open, setOpen] = React.useState(false)
   const [closing, setClosing] = React.useState(false)
   const ref = React.useRef<HTMLDivElement | null>(null)
@@ -95,7 +97,7 @@ export default function SettingsDropdown() {
         onClick={handleToggleOpen}
         aria-expanded={open}
         aria-haspopup="true"
-        aria-label={soundOff ? "Sound settings (sound off)" : "Sound settings (sound on)"}
+        aria-label={soundOff ? t("sound.ariaOff") : t("sound.ariaOn")}
       >
         <span className="relative flex items-center justify-center">
           <Music className={soundOff ? "opacity-60" : undefined} />
@@ -128,11 +130,11 @@ export default function SettingsDropdown() {
            <div className="absolute -top-8 right-8 h-24 w-24 rounded-full bg-primary/10 blur-3xl" />
           <div className="absolute -bottom-10 left-4 h-28 w-28 rounded-full bg-[color:var(--sound-accent-green)]/10 blur-3xl" />
 
-          <div className="relative text-sm text-foreground font-medium mb-2">Sound Settings</div>
+          <div className="relative text-sm text-foreground font-medium mb-2">{t("sound.title")}</div>
 
           <div className="relative mb-3">
             <div className="flex items-center justify-between">
-              <div className="text-sm text-muted-foreground">Master Volume</div>
+              <div className="text-sm text-muted-foreground">{t("sound.masterVolume")}</div>
               <button className="text-xs px-2 py-1 border border-border rounded bg-foreground/5 text-foreground dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-sm transition-colors hover:bg-foreground/10" onClick={handleToggleMute}>
                 {muted ? 'OFF' : 'ON'}
               </button>
@@ -156,7 +158,7 @@ export default function SettingsDropdown() {
           </div>
 
           <div className="relative mb-3">
-            <div className="text-sm text-muted-foreground mb-1">Button Sound Volume</div>
+            <div className="text-sm text-muted-foreground mb-1">{t("sound.buttonVolume")}</div>
             <input
               type="range"
               min={0}
@@ -176,7 +178,7 @@ export default function SettingsDropdown() {
           </div>
 
           <div className="relative mt-3 flex items-center justify-between">
-            <div className="text-sm text-muted-foreground">Background Music</div>
+            <div className="text-sm text-muted-foreground">{t("sound.backgroundMusic")}</div>
             <button className="text-sm px-2 py-1 border border-border rounded bg-foreground/5 text-foreground dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-sm transition-colors hover:bg-foreground/10" onClick={toggleMusic}>
               {musicOn ? 'Off' : 'On'}
             </button>

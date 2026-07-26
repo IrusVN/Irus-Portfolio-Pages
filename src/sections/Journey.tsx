@@ -2,6 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { ImageOnlyModal } from "@/components/ImageOnlyModal";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 interface JourneyItem {
   year: string;
@@ -36,74 +37,44 @@ const itemVariants = {
   },
 };
 
+interface JourneyText {
+  year: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  badge: string;
+}
+
+// Non-translatable structural data, merged by index with the dictionary entries
+const devMeta: Partial<JourneyItem>[] = [
+  { isHighlight: true, externalLink: "https://irusgear.me" },
+  { isHighlight: true },
+  {},
+  {},
+];
+const schoolMeta: Partial<JourneyItem>[] = [{ isHighlight: true }, {}, {}];
+
+const toItems = (texts: JourneyText[], meta: Partial<JourneyItem>[]): JourneyItem[] =>
+  texts.map((text, i) => ({
+    year: text.year,
+    title: text.title,
+    subtitle: text.subtitle || undefined,
+    description: text.description,
+    badgeText: text.badge || undefined,
+    ...meta[i],
+  }));
+
 export default function Journey() {
+  const { t } = useTranslation();
 
-  const devJourney: JourneyItem[] = [
-    {
-      year: "2026 - Present",
-      title: "Full-stack Developer & Thesis Researcher",
-      subtitle: "IrusGear E-commerce Platform",
-      description:
-        "Developing a comprehensive e-commerce website integrating an AI-driven product recommendation system for my graduation thesis. Collaborating with a team, I manage the core database architecture, integrate Python/FastAPI for AI classification, and handle automated deployments via Coolify and DigitalOcean.",
-      badgeText: "Graduation Project 🎓",
-      isHighlight: true,
-      externalLink: "https://irusgear.me",
-    },
-    {
-      year: "Late 2025",
-      title: "Web Developer Intern",
-      subtitle: "TTR IT",
-      description:
-        "Completed a 13-week professional internship at TTR IT, where I developed a dynamic and responsive corporate website for Tan Huy Company. Utilized PHP and JavaScript to optimize performance and deliver a seamless user experience.",
-      badgeText: "Internship",
-      isHighlight: true,
-    },
-    {
-      year: "2024 - 2025",
-      title: "Mastering Modern Web Architecture",
-      subtitle: "Nuxt & Laravel Ecosystem",
-      description:
-        "Focused on in-depth practical application of full-stack architectures. Built robust backends with Laravel and dynamic frontends with Nuxt.js (v3 & v4), while optimizing local development environments using WSL 2 and Laragon on Windows.",
-    },
-    {
-      year: "2021 - Present",
-      title: "Academic Foundation & AI Exploration",
-      subtitle: "Industrial University of Ho Chi Minh City (IUH)",
-      description:
-        "Pursuing a degree in Information Technology with a strong foundation in software engineering principles. Expanded technical interests into Artificial Intelligence, researching LLMs, vector embeddings, and local hosting tools like Ollama to bridge AI with web development.",
-      badgeText: "",
-    },
-  ];
-
-  const schoolJourney: JourneyItem[] = [
-    {
-      year: "2026",
-      title: "Graduation Thesis: AI-Integrated E-commerce",
-      subtitle: "Industrial University of Ho Chi Minh City (IUH)",
-      description:
-        "Developing graduation thesis 'Xây dựng website kinh doanh thiết bị điện tử tích hợp hệ thống gợi ý sản phẩm' under the academic supervision of instructor Đỗ Hà Phương. Designing a scalable full-stack web application integrated with intelligent AI product classification.",
-      badgeText: "Graduation Thesis 🎓",
-      isHighlight: true,
-    },
-    {
-      year: "2023 - 2025",
-      title: "Advanced IT Coursework & Academic Research",
-      subtitle: "Specialized Development Modules",
-      description:
-        "Completed rigorous specialized coursework including Web Systems and Technologies, System Integration and Architecture, Database Management Systems, and Distributed System Development. Conducted academic research and technical essays under the guidance of instructor Võ Công Minh.",
-      badgeText: "Core Studies",
-      isHighlight: false,
-    },
-    {
-      year: "2021 - Present",
-      title: "Bachelor of Information Technology",
-      subtitle: "Industrial University of Ho Chi Minh City (IUH)",
-      description:
-        "Commenced undergraduate studies majoring in Computer Networks and Web Development. Built a comprehensive foundation in software engineering principles, algorithm design, clean code practices, and modern web architectures.",
-      badgeText: "Undergraduate",
-      isHighlight: false,
-    }
-  ];
+  const devJourney = toItems(
+    t("journey.dev", { returnObjects: true }) as JourneyText[],
+    devMeta,
+  );
+  const schoolJourney = toItems(
+    t("journey.school", { returnObjects: true }) as JourneyText[],
+    schoolMeta,
+  );
 
   const renderTimeline = (items: JourneyItem[], tabKey: string) => (
     <motion.div
@@ -195,7 +166,7 @@ export default function Journey() {
                         : ""
                     }`}
                     >
-                      View More
+                      {t("journey.viewMore")}
                     </button>
                   </a>
                 )}
@@ -216,9 +187,9 @@ export default function Journey() {
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="space-y-2 mb-10">
             <h2 className="text-sm font-semibold tracking-wider text-muted-foreground uppercase">
-              Timeline & History
+              {t("journey.label")}
             </h2>
-            <h1 className="text-3xl font-bold text-foreground">My Journey</h1>
+            <h1 className="text-3xl font-bold text-foreground">{t("journey.title")}</h1>
           </div>
 
           <Tabs defaultValue="dev" className="w-full">
@@ -227,13 +198,13 @@ export default function Journey() {
                 value="dev"
                 className="h-full! flex-1 text-md font-medium transition-all"
               >
-                Dev Milestones
+                {t("journey.devTab")}
               </TabsTrigger>
               <TabsTrigger
                 value="school"
                 className="h-full! flex-1 text-md font-medium transition-all"
               >
-                School & Achievements
+                {t("journey.schoolTab")}
               </TabsTrigger>
             </TabsList>
 

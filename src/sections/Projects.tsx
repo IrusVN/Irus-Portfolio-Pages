@@ -1,6 +1,7 @@
 import ProjectCard from "@/components/projectCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 interface ProjectCardProps {
   title: string;
@@ -13,21 +14,6 @@ interface ProjectCardProps {
   isSolo: boolean;
 }
 
-const projectList: ProjectCardProps[] = [
-  {
-    title: "Irus Gear",
-    year: 2026,
-    description:
-      "A full-stack e-commerce project for Irus Gear, including the customer-facing interface and backend services.",
-    techStack: ["Frontend", "Backend"],
-    imageUrl:
-      "https://repository-images.githubusercontent.com/1132107430/bc598e05-ec8c-45b2-bf66-1a99b522c2be",
-    projectUrl: "https://irusgear.me/",
-    githubUrl: "https://github.com/HoangMaiLapTrinh/irusgear-frontend",
-    isSolo: true,
-  },
-];
-
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -39,12 +25,29 @@ const containerVariants = {
 };
 
 function Projects() {
+  const { t } = useTranslation();
+
+  // Structural data lives here; translatable text comes from the dictionary
+  const projectList: ProjectCardProps[] = [
+    {
+      title: "Irus Gear",
+      year: 2026,
+      description: t("projects.items.irusGear.description"),
+      techStack: [t("projects.tags.frontend"), t("projects.tags.backend")],
+      imageUrl:
+        "https://repository-images.githubusercontent.com/1132107430/bc598e05-ec8c-45b2-bf66-1a99b522c2be",
+      projectUrl: "https://irusgear.me/",
+      githubUrl: "https://github.com/HoangMaiLapTrinh/irusgear-frontend",
+      isSolo: true,
+    },
+  ];
+
   return (
     <>
       <section id="projects">
         <div className="relative pt-12 pb-12 pr-24 pl-24 j md:flex-row w-full">
           <div className="container flex flex-col items-center mx-auto">
-            <h2 className="text-4xl font-extrabold text-center">Projects</h2>
+            <h2 className="text-4xl font-extrabold text-center">{t("projects.title")}</h2>
 
             <Tabs defaultValue="solo" className="w-full">
               <TabsList className="flex w-full mt-8 mb-3 h-auto! items-stretch border border-border bg-background">
@@ -52,13 +55,13 @@ function Projects() {
                   value="solo"
                   className="h-full! flex-1 text-md font-medium transition-all"
                 >
-                  Solo Projects
+                  {t("projects.soloTab")}
                 </TabsTrigger>
                 <TabsTrigger
                   value="team"
                   className="h-full! flex-1 text-md font-medium transition-all"
                 >
-                  Team Projects
+                  {t("projects.teamTab")}
                 </TabsTrigger>
               </TabsList>
 
