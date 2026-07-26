@@ -24,6 +24,7 @@ export const en = {
       '"Architecting dynamic web applications and AI-driven solutions. Translating complex technical logic into engaging user experiences."',
     contactMe: "Contact Me",
     exploreProjects: "Explore Projects",
+    downloadCV: "Download CV",
   },
   about: {
     label: "About",
@@ -139,8 +140,12 @@ export const en = {
     body: "Interested in discussing full-stack development, collaborating on modern web architectures, or just want to connect? Reach out to me via the platforms below:",
     social: "[Social]",
     community: "[Community]",
+    emailLabel: "[Email]",
+    codeLabel: "[Code]",
     openProfile: "→ Open Profile",
     copyUsername: "→ Copy Username",
+    sendEmail: "→ Send Email",
+    viewGithub: "→ View GitHub",
     copied: "[Copied!]",
   },
   sound: {
@@ -157,6 +162,9 @@ export const en = {
   },
   language: {
     ariaLabel: "Change language",
+  },
+  common: {
+    scrollToTop: "Back to top",
   },
 }
 

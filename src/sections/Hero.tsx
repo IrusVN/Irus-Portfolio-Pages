@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { Download } from "lucide-react";
 
 import me from "@/assets/irus.jpeg";
 import { Button } from "@/components/ui/button";
@@ -81,6 +82,12 @@ function Hero() {
               <a href="#projects">
                 <Button variant="secondary" className="p-6">
                   {t("hero.exploreProjects")}
+                </Button>
+              </a>
+              <a href="/cv/CV_MAILEHUYHOANG.pdf" download="Mai-Le-Huy-Hoang-CV.pdf">
+                <Button variant="outline" className="p-6">
+                  <Download className="mr-1 h-4 w-4" />
+                  {t("hero.downloadCV")}
                 </Button>
               </a>
             </div>

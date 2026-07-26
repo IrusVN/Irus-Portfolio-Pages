@@ -24,6 +24,7 @@ export const vi: Dictionary = {
       '"Kiến tạo các ứng dụng web động và giải pháp ứng dụng AI. Chuyển hóa logic kỹ thuật phức tạp thành trải nghiệm người dùng cuốn hút."',
     contactMe: "Liên hệ",
     exploreProjects: "Khám phá dự án",
+    downloadCV: "Tải CV",
   },
   about: {
     label: "Giới thiệu",
@@ -139,8 +140,12 @@ export const vi: Dictionary = {
     body: "Bạn muốn trao đổi về phát triển full-stack, hợp tác xây dựng các kiến trúc web hiện đại, hay đơn giản là muốn kết nối? Hãy liên hệ với tôi qua các nền tảng dưới đây:",
     social: "[Mạng xã hội]",
     community: "[Cộng đồng]",
+    emailLabel: "[Email]",
+    codeLabel: "[Mã nguồn]",
     openProfile: "→ Mở trang cá nhân",
     copyUsername: "→ Sao chép tên người dùng",
+    sendEmail: "→ Gửi email",
+    viewGithub: "→ Xem GitHub",
     copied: "[Đã sao chép!]",
   },
   sound: {
@@ -157,5 +162,8 @@ export const vi: Dictionary = {
   },
   language: {
     ariaLabel: "Thay đổi ngôn ngữ",
+  },
+  common: {
+    scrollToTop: "Về đầu trang",
   },
 }

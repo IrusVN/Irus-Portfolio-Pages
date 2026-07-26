@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, MotionConfig } from "framer-motion";
 import type { ReactNode } from "react";
 
 import Navbar from "./components/navbar";
+import ScrollToTop from "./components/ScrollToTop";
 import AboutMe from "./sections/About";
 import Hero from "./sections/Hero";
 import Journey from "./sections/Journey";
@@ -108,7 +109,9 @@ function App() {
   }, [phase]);
 
   return (
-    <>
+    // reducedMotion="user" disables transform/layout animations for users with
+    // prefers-reduced-motion enabled (accessibility)
+    <MotionConfig reducedMotion="user">
       <CustomCursor />
       <AnimatePresence mode="wait">
         {phase === "loading" && (
@@ -207,10 +210,12 @@ function App() {
                 <Contact />
               </ScrollReveal>
             </main>
+
+            <ScrollToTop />
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </MotionConfig>
   );
 }
 

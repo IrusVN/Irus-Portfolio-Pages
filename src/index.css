@@ -143,6 +143,22 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Respect users who prefer reduced motion: kill CSS animations/transitions
+   and smooth scrolling (framer-motion is handled by MotionConfig in App.tsx) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

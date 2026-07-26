@@ -24,6 +24,7 @@ export const ja: Dictionary = {
       '"動的なWebアプリケーションとAIを活用したソリューションを設計し、複雑な技術ロジックを魅力的なユーザー体験へと昇華させます。"',
     contactMe: "お問い合わせ",
     exploreProjects: "プロジェクトを見る",
+    downloadCV: "履歴書をダウンロード",
   },
   about: {
     label: "自己紹介",
@@ -139,8 +140,12 @@ export const ja: Dictionary = {
     body: "フルスタック開発についての意見交換や、モダンWebアーキテクチャでの協業、あるいは気軽なつながりでも構いません。以下のプラットフォームからお気軽にご連絡ください:",
     social: "[SNS]",
     community: "[コミュニティ]",
+    emailLabel: "[メール]",
+    codeLabel: "[コード]",
     openProfile: "→ プロフィールを開く",
     copyUsername: "→ ユーザー名をコピー",
+    sendEmail: "→ メールを送る",
+    viewGithub: "→ GitHubを見る",
     copied: "[コピーしました!]",
   },
   sound: {
@@ -157,5 +162,8 @@ export const ja: Dictionary = {
   },
   language: {
     ariaLabel: "言語を変更",
+  },
+  common: {
+    scrollToTop: "トップへ戻る",
   },
 }

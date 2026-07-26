@@ -24,6 +24,7 @@ export const ko: Dictionary = {
       '"동적인 웹 애플리케이션과 AI 기반 솔루션을 설계합니다. 복잡한 기술 로직을 매력적인 사용자 경험으로 풀어냅니다."',
     contactMe: "연락하기",
     exploreProjects: "프로젝트 살펴보기",
+    downloadCV: "이력서 다운로드",
   },
   about: {
     label: "소개",
@@ -139,8 +140,12 @@ export const ko: Dictionary = {
     body: "풀스택 개발에 대한 논의, 모던 웹 아키텍처 관련 협업, 또는 가벼운 인사라도 나누고 싶으신가요? 아래 플랫폼을 통해 연락해 주세요:",
     social: "[소셜]",
     community: "[커뮤니티]",
+    emailLabel: "[이메일]",
+    codeLabel: "[코드]",
     openProfile: "→ 프로필 열기",
     copyUsername: "→ 사용자명 복사",
+    sendEmail: "→ 이메일 보내기",
+    viewGithub: "→ GitHub 보기",
     copied: "[복사 완료!]",
   },
   sound: {
@@ -157,5 +162,8 @@ export const ko: Dictionary = {
   },
   language: {
     ariaLabel: "언어 변경",
+  },
+  common: {
+    scrollToTop: "맨 위로",
   },
 }

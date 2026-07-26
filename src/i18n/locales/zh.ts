@@ -24,6 +24,7 @@ export const zh: Dictionary = {
       '"构建动态 Web 应用与 AI 驱动的解决方案，将复杂的技术逻辑转化为引人入胜的用户体验。"',
     contactMe: "联系我",
     exploreProjects: "探索项目",
+    downloadCV: "下载简历",
   },
   about: {
     label: "关于",
@@ -139,8 +140,12 @@ export const zh: Dictionary = {
     body: "想聊聊全栈开发、在现代 Web 架构上开展合作，或只是想认识一下？欢迎通过以下平台与我联系：",
     social: "[社交平台]",
     community: "[社区]",
+    emailLabel: "[邮箱]",
+    codeLabel: "[代码]",
     openProfile: "→ 打开个人主页",
     copyUsername: "→ 复制用户名",
+    sendEmail: "→ 发送邮件",
+    viewGithub: "→ 查看 GitHub",
     copied: "[已复制！]",
   },
   sound: {
@@ -157,5 +162,8 @@ export const zh: Dictionary = {
   },
   language: {
     ariaLabel: "切换语言",
+  },
+  common: {
+    scrollToTop: "回到顶部",
   },
 }
