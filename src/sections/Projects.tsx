@@ -45,7 +45,7 @@ function Projects() {
   return (
     <>
       <section id="projects">
-        <div className="relative pt-12 pb-12 pr-24 pl-24 j md:flex-row w-full">
+        <div className="relative py-12 px-4 sm:px-8 md:px-12 lg:px-24 w-full">
           <div className="container flex flex-col items-center mx-auto">
             <h2 className="text-4xl font-extrabold text-center">{t("projects.title")}</h2>
 
@@ -53,13 +53,13 @@ function Projects() {
               <TabsList className="flex w-full mt-8 mb-3 h-auto! items-stretch border border-border bg-background">
                 <TabsTrigger
                   value="solo"
-                  className="h-full! flex-1 text-md font-medium transition-all"
+                  className="h-full! flex-1 text-xs sm:text-sm md:text-md font-medium transition-all whitespace-normal break-words px-2 sm:px-4 h-auto"
                 >
                   {t("projects.soloTab")}
                 </TabsTrigger>
                 <TabsTrigger
                   value="team"
-                  className="h-full! flex-1 text-md font-medium transition-all"
+                  className="h-full! flex-1 text-xs sm:text-sm md:text-md font-medium transition-all whitespace-normal break-words px-2 sm:px-4 h-auto"
                 >
                   {t("projects.teamTab")}
                 </TabsTrigger>

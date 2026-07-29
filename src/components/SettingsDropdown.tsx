@@ -124,18 +124,18 @@ export default function SettingsDropdown() {
 
       {(open || closing) && (
         <div
-           className={`absolute right-0 mt-2 w-72 origin-top-right overflow-hidden rounded-lg border border-primary/60 bg-popover/95 bg-[radial-gradient(circle_at_top_left,rgba(25,60,184,0.14),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(24,225,139,0.08),transparent_30%)] p-4 shadow-[0_20px_80px_rgba(0,0,0,0.25),0_0_0_1px_rgba(25,60,184,0.15)] dark:shadow-[0_20px_80px_rgba(0,0,0,0.55),0_0_0_1px_rgba(25,60,184,0.18)] backdrop-blur-xl z-50 ${open ? "animate-in fade-in-0 zoom-in-95 slide-in-from-top-2 duration-200 ease-out" : "animate-out fade-out-0 zoom-out-95 slide-out-to-top-2 duration-180 ease-in"}`}
+           className={`absolute right-0 mt-2 w-64 sm:w-72 origin-top-right overflow-hidden rounded-lg border border-primary/60 bg-popover/95 bg-[radial-gradient(circle_at_top_left,rgba(25,60,184,0.14),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(24,225,139,0.08),transparent_30%)] p-3 sm:p-4 shadow-[0_20px_80px_rgba(0,0,0,0.25),0_0_0_1px_rgba(25,60,184,0.15)] dark:shadow-[0_20px_80px_rgba(0,0,0,0.55),0_0_0_1px_rgba(25,60,184,0.18)] backdrop-blur-xl z-50 ${open ? "animate-in fade-in-0 zoom-in-95 slide-in-from-top-2 duration-200 ease-out" : "animate-out fade-out-0 zoom-out-95 slide-out-to-top-2 duration-180 ease-in"}`}
         >
            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/90 to-transparent" />
            <div className="absolute -top-8 right-8 h-24 w-24 rounded-full bg-primary/10 blur-3xl" />
           <div className="absolute -bottom-10 left-4 h-28 w-28 rounded-full bg-[color:var(--sound-accent-green)]/10 blur-3xl" />
 
-          <div className="relative text-sm text-foreground font-medium mb-2">{t("sound.title")}</div>
+          <div className="relative text-xs sm:text-sm text-foreground font-medium mb-2">{t("sound.title")}</div>
 
-          <div className="relative mb-3">
+          <div className="relative mb-2 sm:mb-3">
             <div className="flex items-center justify-between">
-              <div className="text-sm text-muted-foreground">{t("sound.masterVolume")}</div>
-              <button className="text-xs px-2 py-1 border border-border rounded bg-foreground/5 text-foreground dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-sm transition-colors hover:bg-foreground/10" onClick={handleToggleMute}>
+              <div className="text-xs sm:text-sm text-muted-foreground">{t("sound.masterVolume")}</div>
+              <button className="text-[10px] sm:text-xs px-1.5 py-0.5 sm:px-2 sm:py-1 border border-border rounded bg-foreground/5 text-foreground dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-sm transition-colors hover:bg-foreground/10" onClick={handleToggleMute}>
                 {muted ? 'OFF' : 'ON'}
               </button>
             </div>
@@ -146,19 +146,19 @@ export default function SettingsDropdown() {
               step={0.05}
               value={volume}
               onChange={(e) => setVolume(Number(e.target.value))}
-              className={sliderClassName + " mt-2 mb-3"}
+              className={sliderClassName + " mt-1.5 mb-2 sm:mt-2 sm:mb-3"}
               style={sliderTrackStyle(volume)}
               aria-label="Master volume"
             />
-            <div className="flex items-center justify-between text-[11px] text-muted-foreground/80">
+            <div className="flex items-center justify-between text-[10px] sm:text-[11px] text-muted-foreground/80">
               <span>0%</span>
               <span>{formatPercent(volume)}</span>
               <span>100%</span>
             </div>
           </div>
 
-          <div className="relative mb-3">
-            <div className="text-sm text-muted-foreground mb-1">{t("sound.buttonVolume")}</div>
+          <div className="relative mb-2 sm:mb-3">
+            <div className="text-xs sm:text-sm text-muted-foreground mb-1">{t("sound.buttonVolume")}</div>
             <input
               type="range"
               min={0}
@@ -170,16 +170,16 @@ export default function SettingsDropdown() {
               style={sliderTrackStyle(clickVolume)}
               aria-label="Button volume"
             />
-            <div className="mt-1 flex items-center justify-between text-[11px] text-muted-foreground/80">
+            <div className="mt-1 flex items-center justify-between text-[10px] sm:text-[11px] text-muted-foreground/80">
               <span>0%</span>
               <span>{formatPercent(clickVolume)}</span>
               <span>100%</span>
             </div>
           </div>
 
-          <div className="relative mt-3 flex items-center justify-between">
-            <div className="text-sm text-muted-foreground">{t("sound.backgroundMusic")}</div>
-            <button className="text-sm px-2 py-1 border border-border rounded bg-foreground/5 text-foreground dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-sm transition-colors hover:bg-foreground/10" onClick={toggleMusic}>
+          <div className="relative mt-2 sm:mt-3 flex items-center justify-between">
+            <div className="text-xs sm:text-sm text-muted-foreground">{t("sound.backgroundMusic")}</div>
+            <button className="text-[10px] sm:text-xs px-1.5 py-0.5 sm:px-2 sm:py-1 border border-border rounded bg-foreground/5 text-foreground dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-sm transition-colors hover:bg-foreground/10" onClick={toggleMusic}>
               {musicOn ? 'Off' : 'On'}
             </button>
           </div>

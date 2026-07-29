@@ -185,7 +185,7 @@ export default function Journey() {
         className="py-20 bg-background text-foreground border-b border-border"
       >
         <div className="container mx-auto px-4 max-w-3xl">
-          <div className="space-y-2 mb-10">
+          <div className="space-y-2">
             <h2 className="text-sm font-semibold tracking-wider text-muted-foreground uppercase">
               {t("journey.label")}
             </h2>
@@ -193,16 +193,16 @@ export default function Journey() {
           </div>
 
           <Tabs defaultValue="dev" className="w-full">
-            <TabsList className="flex w-full mt-8 mb-3 h-auto! items-stretch border border-border bg-background">
+            <TabsList className="flex w-full mt-4 mb-3 h-auto! items-stretch border border-border bg-background">
               <TabsTrigger
                 value="dev"
-                className="h-full! flex-1 text-md font-medium transition-all"
+                className="h-full! flex-1 text-xs sm:text-sm md:text-md font-medium transition-all whitespace-normal break-words px-2 sm:px-4 h-auto"
               >
                 {t("journey.devTab")}
               </TabsTrigger>
               <TabsTrigger
                 value="school"
-                className="h-full! flex-1 text-md font-medium transition-all"
+                className="h-full! flex-1 text-xs sm:text-sm md:text-md font-medium transition-all whitespace-normal break-words px-2 sm:px-4 h-auto"
               >
                 {t("journey.schoolTab")}
               </TabsTrigger>

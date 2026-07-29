@@ -87,7 +87,7 @@ export const ja: Dictionary = {
         title: "Web開発インターン",
         subtitle: "TTR IT",
         description:
-          "TTR IT にて13週間の実務インターンシップを修了し、Tan Huy Company のための動的でレスポンシブなコーポレートサイトを開発しました。PHP と JavaScript を活用してパフォーマンスを最適化し、快適なユーザー体験を実現しました。",
+          "TTR IT にて13週間の実務インターンシップを修了し、TTR IT Company のための動的でレスポンシブなコーポレートサイトを開発しました。PHP と JavaScript を活用してパフォーマンスを最適化し、快適なユーザー体験を実現しました。",
         badge: "インターンシップ",
       },
       {
@@ -126,7 +126,7 @@ export const ja: Dictionary = {
       },
       {
         year: "2021 - 現在",
-        title: "情報技術(IT)学士課程",
+        title: "情報技術(IT)技術士課程",
         subtitle: "ホーチミン市工業大学 (IUH)",
         description:
           "コンピュータネットワークとWeb開発を専攻として学部課程を開始しました。ソフトウェア工学の原則、アルゴリズム設計、クリーンコードの実践、モダンWebアーキテクチャにわたる総合的な基礎を築きました。",

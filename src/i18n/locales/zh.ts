@@ -87,7 +87,7 @@ export const zh: Dictionary = {
         title: "Web 开发实习生",
         subtitle: "TTR IT",
         description:
-          "在 TTR IT 完成了为期 13 周的专业实习，期间为 Tan Huy Company 开发了一个动态响应式企业官网，运用 PHP 和 JavaScript 优化性能，打造流畅的用户体验。",
+          "在 TTR IT 完成了为期 13 周的专业实习，期间为 TTR IT Company 开发了一个动态响应式企业官网，运用 PHP 和 JavaScript 优化性能，打造流畅的用户体验。",
         badge: "实习经历",
       },
       {
@@ -126,7 +126,7 @@ export const zh: Dictionary = {
       },
       {
         year: "2021 - 至今",
-        title: "信息技术学士",
+        title: "信息技术工程师",
         subtitle: "胡志明市工业大学 (IUH)",
         description:
           "开始攻读本科学位，主修计算机网络与 Web 开发方向。系统性地打下了软件工程原理、算法设计、整洁代码实践以及现代 Web 架构的全面基础。",

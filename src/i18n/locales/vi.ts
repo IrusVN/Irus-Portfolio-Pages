@@ -87,7 +87,7 @@ export const vi: Dictionary = {
         title: "Thực tập sinh Lập trình Web",
         subtitle: "TTR IT",
         description:
-          "Hoàn thành kỳ thực tập chuyên môn kéo dài 13 tuần tại TTR IT, nơi tôi phát triển website doanh nghiệp động, chuẩn responsive cho Tan Huy Company. Sử dụng PHP và JavaScript để tối ưu hiệu năng và mang đến trải nghiệm người dùng mượt mà.",
+          "Hoàn thành kỳ thực tập chuyên môn kéo dài 13 tuần tại TTR IT, nơi tôi phát triển website doanh nghiệp động, chuẩn responsive cho TTR IT Company. Sử dụng PHP và JavaScript để tối ưu hiệu năng và mang đến trải nghiệm người dùng mượt mà.",
         badge: "Thực tập",
       },
       {
@@ -126,7 +126,7 @@ export const vi: Dictionary = {
       },
       {
         year: "2021 - Hiện tại",
-        title: "Cử nhân Công nghệ thông tin",
+        title: "Kỹ sư Công nghệ thông tin",
         subtitle: "Trường Đại học Công nghiệp TP. Hồ Chí Minh (IUH)",
         description:
           "Bắt đầu chương trình đại học với chuyên ngành Mạng máy tính và Phát triển Web. Xây dựng nền tảng toàn diện về nguyên lý công nghệ phần mềm, thiết kế thuật toán, thực hành clean code và các kiến trúc web hiện đại.",

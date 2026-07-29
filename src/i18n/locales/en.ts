@@ -87,7 +87,7 @@ export const en = {
         title: "Web Developer Intern",
         subtitle: "TTR IT",
         description:
-          "Completed a 13-week professional internship at TTR IT, where I developed a dynamic and responsive corporate website for Tan Huy Company. Utilized PHP and JavaScript to optimize performance and deliver a seamless user experience.",
+          "Completed a 13-week professional internship at TTR IT, where I developed a dynamic and responsive corporate website for TTR IT Company. Utilized PHP and JavaScript to optimize performance and deliver a seamless user experience.",
         badge: "Internship",
       },
       {
@@ -126,7 +126,7 @@ export const en = {
       },
       {
         year: "2021 - Present",
-        title: "Bachelor of Information Technology",
+        title: "Engineer of Information Technology",
         subtitle: "Industrial University of Ho Chi Minh City (IUH)",
         description:
           "Commenced undergraduate studies majoring in Computer Networks and Web Development. Built a comprehensive foundation in software engineering principles, algorithm design, clean code practices, and modern web architectures.",

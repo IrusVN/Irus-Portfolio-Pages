@@ -34,11 +34,11 @@ function Hero() {
         <div className="pointer-events-none absolute inset-0 bg-radial-[circle_at_center,transparent_20%,var(--hero-vignette)_80%]"></div>
 
         <div className="relative z-10 mx-auto flex max-w-6xl flex-col-reverse items-center justify-between gap-12 md:flex-row w-full">
-          <div className="flex flex-col items-baseline text-left md:items-start md:w-1/2 gap-4  tracking-wide">
+          <div className="flex flex-col items-start text-left w-full md:w-1/2 gap-4  tracking-wide">
             <h2 className="text-1xl text-foreground">
               {t("hero.knownAs")}
             </h2>
-            <h1 className="whitespace-nowrap text-6xl font-extrabold">Mai Lê Huy Hoàng</h1>
+            <h1 className="break-words text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-left w-full">Mai Lê Huy Hoàng</h1>
             <div className="text-1xl font-mono text-muted-foreground sm:text-2xl h-10 flex items-center">
               <span className="text-primary mr-2">&gt;</span>
               <AnimatePresence mode="wait">
@@ -75,7 +75,7 @@ function Hero() {
             <p className=" max-w-xl text-base text-muted-foreground font-mono leading-relaxed text-left">
               {t("hero.tagline")}
             </p>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-3">
               <a href="#contact">
                 <Button className="p-6">{t("hero.contactMe")}</Button>
               </a>

@@ -97,7 +97,7 @@ function TechStack() {
   return (
     <>
       <section id="techstack">
-        <div className="relative flex pt-14 pb-14 pr-16 pl-16 md:pr-28 md:pl-28 flex-col justify-between w-full gap-8 bg-muted border-t-2 border-b-2">
+        <div className="relative flex py-12 px-4 sm:px-8 md:px-12 lg:px-24 flex-col justify-between w-full gap-8 bg-muted border-t-2 border-b-2">
           <div className="flex flex-col items-baseline text-left md:items-start tracking-wide">
             <h2 className="text-1xl font-extralight text-foreground">
               {t("techStack.label")}

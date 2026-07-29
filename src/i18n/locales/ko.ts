@@ -87,7 +87,7 @@ export const ko: Dictionary = {
         title: "웹 개발자 인턴",
         subtitle: "TTR IT",
         description:
-          "TTR IT에서 13주간의 전문 인턴십을 수료하며 Tan Huy Company의 동적인 반응형 기업 웹사이트를 개발했습니다. PHP와 JavaScript를 활용하여 성능을 최적화하고 매끄러운 사용자 경험을 구현했습니다.",
+          "TTR IT에서 13주간의 전문 인턴십을 수료하며 TTR IT Company의 동적인 반응형 기업 웹사이트를 개발했습니다. PHP와 JavaScript를 활용하여 성능을 최적화하고 매끄러운 사용자 경험을 구현했습니다.",
         badge: "인턴십",
       },
       {
@@ -126,7 +126,7 @@ export const ko: Dictionary = {
       },
       {
         year: "2021 - 현재",
-        title: "정보기술 학사",
+        title: "정보기술 기사",
         subtitle: "호치민시 산업대학교 (IUH)",
         description:
           "컴퓨터 네트워크 및 웹 개발을 전공으로 학부 과정을 시작했습니다. 소프트웨어 공학 원리, 알고리즘 설계, 클린 코드 작성, 모던 웹 아키텍처에 대한 종합적인 기반을 쌓았습니다.",
