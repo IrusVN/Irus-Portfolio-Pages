@@ -31,6 +31,7 @@ function ScrollReveal({ children }: ScrollRevealProps) {
 
 const greetings = [
   "Hello",
+  "Xin chào",
   "こんにちは",
   "Bonjour",
   "Hola",
