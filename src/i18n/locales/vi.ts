@@ -29,7 +29,7 @@ export const vi: Dictionary = {
   about: {
     label: "Giới thiệu",
     title: "Về tôi",
-    body: "Tôi là một Full-stack Web Developer. Tôi đã từng bước phát triển thành một lập trình viên tập trung xây dựng kiến trúc web hiệu quả và các nền tảng động, với Nuxt.js và Laravel là stack chủ lực. Với niềm đam mê mạnh mẽ trong việc tích hợp AI vào phát triển phần mềm, tôi kết nối logic kỹ thuật, tư duy thiết kế clean code và trải nghiệm người dùng liền mạch để biến ý tưởng thành những giải pháp số hoàn chỉnh.",
+    body: "Tôi là một Full-stack Web Developer. Đã từng bước phát triển thành một lập trình viên tập trung xây dựng kiến trúc web hiệu quả và các nền tảng động, với Nuxt.js và Laravel là stack chủ lực. Với niềm đam mê mạnh mẽ trong việc tích hợp AI vào phát triển phần mềm, tôi kết nối logic kỹ thuật, tư duy thiết kế clean code và trải nghiệm người dùng liền mạch để biến ý tưởng thành những giải pháp số hoàn chỉnh.",
   },
   projects: {
     title: "Dự án",

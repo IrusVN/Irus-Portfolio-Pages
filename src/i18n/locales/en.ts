@@ -29,7 +29,7 @@ export const en = {
   about: {
     label: "About",
     title: "About Me",
-    body: "I am a Full-stack Web Developer. I have grown into a developer who focuses on building efficient web architectures and dynamic platforms, utilizing Nuxt.js and Laravel as my primary stack. With a strong passion for integrating AI into software development, I bridge the gap between technical logic, clean code design, and seamless user experiences to turn ideas into functional digital solutions.",
+    body: "I am a Full-stack Web Developer who has grown to focus on building efficient web architectures and dynamic platforms, utilizing Nuxt.js and Laravel as my primary stack. With a strong passion for integrating AI into software development, I bridge the gap between technical logic, clean code design, and seamless user experiences to turn ideas into functional digital solutions.",
   },
   projects: {
     title: "Projects",
