@@ -25,6 +25,9 @@ export const ko: Dictionary = {
     contactMe: "연락하기",
     exploreProjects: "프로젝트 살펴보기",
     downloadCV: "이력서 다운로드",
+    cvEnglish: "영어 버전 (EN)",
+    cvVietnamese: "베트남어 버전 (VI)",
+    selectCV: "이력서 버전 선택",
   },
   about: {
     label: "소개",

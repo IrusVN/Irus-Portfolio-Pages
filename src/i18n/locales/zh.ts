@@ -25,6 +25,9 @@ export const zh: Dictionary = {
     contactMe: "联系我",
     exploreProjects: "探索项目",
     downloadCV: "下载简历",
+    cvEnglish: "英文版 (EN)",
+    cvVietnamese: "越南语版 (VI)",
+    selectCV: "选择简历版本",
   },
   about: {
     label: "关于",

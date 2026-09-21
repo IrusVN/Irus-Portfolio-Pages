@@ -25,6 +25,9 @@ export const ja: Dictionary = {
     contactMe: "お問い合わせ",
     exploreProjects: "プロジェクトを見る",
     downloadCV: "履歴書をダウンロード",
+    cvEnglish: "英語版 (EN)",
+    cvVietnamese: "ベトナム語版 (VI)",
+    selectCV: "履歴書の言語を選択",
   },
   about: {
     label: "自己紹介",

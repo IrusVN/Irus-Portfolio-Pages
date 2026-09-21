@@ -25,6 +25,9 @@ export const vi: Dictionary = {
     contactMe: "Liên hệ",
     exploreProjects: "Khám phá dự án",
     downloadCV: "Tải CV",
+    cvEnglish: "Bản Tiếng Anh (EN)",
+    cvVietnamese: "Bản Tiếng Việt (VI)",
+    selectCV: "Chọn phiên bản CV",
   },
   about: {
     label: "Giới thiệu",

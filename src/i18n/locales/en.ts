@@ -25,6 +25,9 @@ export const en = {
     contactMe: "Contact Me",
     exploreProjects: "Explore Projects",
     downloadCV: "Download CV",
+    cvEnglish: "English Version (EN)",
+    cvVietnamese: "Vietnamese Version (VI)",
+    selectCV: "Select CV Version",
   },
   about: {
     label: "About",

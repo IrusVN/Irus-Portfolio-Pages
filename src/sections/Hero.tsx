@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Download } from "lucide-react";
+import DownloadCVDropdown from "@/components/DownloadCVDropdown";
 
 import me from "@/assets/irus.jpeg";
 import { Button } from "@/components/ui/button";
@@ -22,7 +22,7 @@ function Hero() {
     <>
       <section
         id="home"
-        className="relative flex min-h-[80vh] w-full items-center justify-center overflow-hidden bg-background px-6 py-12 md:px-12"
+        className="relative flex min-h-[80vh] w-full items-center justify-center bg-background px-6 py-12 md:px-12"
         style={{
           backgroundImage: `
           linear-gradient(to right, var(--hero-grid-line) 1px, transparent 1px),
@@ -84,12 +84,7 @@ function Hero() {
                   {t("hero.exploreProjects")}
                 </Button>
               </a>
-              <a href="/cv/CV_MAILEHUYHOANG.pdf" download="Mai-Le-Huy-Hoang-CV.pdf">
-                <Button variant="outline" className="p-6">
-                  <Download className="mr-1 h-4 w-4" />
-                  {t("hero.downloadCV")}
-                </Button>
-              </a>
+              <DownloadCVDropdown />
             </div>
           </div>
           <div className="flex md:w-1/2 justify-end items-center">
