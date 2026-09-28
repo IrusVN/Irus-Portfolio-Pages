@@ -10,6 +10,11 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
+interface GithubLink {
+  label: string;
+  url: string;
+}
+
 interface ProjectCardProps {
   title: string;
   year: number;
@@ -18,6 +23,7 @@ interface ProjectCardProps {
   imageUrl: string;
   projectUrl: string;
   githubUrl?: string;
+  githubUrls?: GithubLink[];
 }
 
 const cardVariants = {
@@ -40,6 +46,7 @@ function ProjectCard({
   imageUrl,
   projectUrl,
   githubUrl,
+  githubUrls,
 }: ProjectCardProps) {
   const { t } = useTranslation();
 
@@ -86,14 +93,22 @@ function ProjectCard({
           </div>
 
           <div className="w-full p-4 pt-0">
-            <CardFooter className="flex justify-end p-0 border-0 gap-2 w-full">
-              {githubUrl && (
-                <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" className="px-6 py-5">
-                    Github
-                  </Button>
-                </a>
-              )}
+            <CardFooter className="flex justify-end p-0 border-0 gap-2 w-full flex-wrap">
+              {githubUrls
+                ? githubUrls.map((gh) => (
+                    <a key={gh.label} href={gh.url} target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" className="px-6 py-5">
+                        {gh.label}
+                      </Button>
+                    </a>
+                  ))
+                : githubUrl && (
+                    <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" className="px-6 py-5">
+                        Github
+                      </Button>
+                    </a>
+                  )}
               <a href={projectUrl} target="_blank" rel="noopener noreferrer">
                 <Button className="px-6 py-5">{t("projects.card.open")}</Button>
               </a>

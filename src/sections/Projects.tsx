@@ -3,6 +3,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
+interface GithubLink {
+  label: string;
+  url: string;
+}
+
 interface ProjectCardProps {
   title: string;
   year: number;
@@ -11,6 +16,7 @@ interface ProjectCardProps {
   imageUrl: string;
   projectUrl: string;
   githubUrl?: string;
+  githubUrls?: GithubLink[];
   isSolo: boolean;
 }
 
@@ -37,7 +43,10 @@ function Projects() {
       imageUrl:
         "https://repository-images.githubusercontent.com/1132107430/bc598e05-ec8c-45b2-bf66-1a99b522c2be",
       projectUrl: "https://irusgear.me/",
-      githubUrl: "https://github.com/HoangMaiLapTrinh/irusgear-frontend",
+      githubUrls: [
+        { label: "Frontend", url: "https://github.com/HoangMaiLapTrinh/irusgear-frontend" },
+        { label: "Backend", url: "https://github.com/HoangMaiLapTrinh/irusgear-backend" },
+      ],
       isSolo: true,
     },
     {
@@ -47,7 +56,7 @@ function Projects() {
       techStack: [t("projects.tags.fullstack"), t("projects.tags.frontend"), t("projects.tags.backend")],
       imageUrl:
         "https://opengraph.githubassets.com/1/IrusVN/BTL_WEB",
-      projectUrl: "https://github.com/IrusVN/BTL_WEB",
+      projectUrl: "https://team2hand.pages.dev/",
       githubUrl: "https://github.com/IrusVN/BTL_WEB",
       isSolo: false,
     },
@@ -58,7 +67,7 @@ function Projects() {
       techStack: [t("projects.tags.frontend")],
       imageUrl:
         "https://opengraph.githubassets.com/1/IrusVN/websitebandongho",
-      projectUrl: "https://github.com/IrusVN/websitebandongho",
+      projectUrl: "https://iruswatch.pages.dev/",
       githubUrl: "https://github.com/IrusVN/websitebandongho",
       isSolo: false,
     },
@@ -69,7 +78,7 @@ function Projects() {
       techStack: [t("projects.tags.frontend"), t("projects.tags.portfolio")],
       imageUrl:
         "https://opengraph.githubassets.com/1/HoangMaiLapTrinh/irus-portfolio-pages",
-      projectUrl: "https://hoangmailaptrinh.github.io/irus-portfolio-pages/",
+      projectUrl: "https://portfolio-irus.pages.dev/",
       githubUrl: "https://github.com/HoangMaiLapTrinh/irus-portfolio-pages",
       isSolo: true,
     },
@@ -118,6 +127,7 @@ function Projects() {
                           imageUrl={value.imageUrl}
                           projectUrl={value.projectUrl}
                           githubUrl={value.githubUrl}
+                          githubUrls={value.githubUrls}
                         />
                       ),
                   )}
@@ -144,6 +154,7 @@ function Projects() {
                           imageUrl={value.imageUrl}
                           projectUrl={value.projectUrl}
                           githubUrl={value.githubUrl}
+                          githubUrls={value.githubUrls}
                         />
                       ),
                   )}
