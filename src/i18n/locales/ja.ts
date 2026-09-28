@@ -41,11 +41,25 @@ export const ja: Dictionary = {
     tags: {
       frontend: "フロントエンド",
       backend: "バックエンド",
+      fullstack: "フルスタック",
+      portfolio: "ポートフォリオ",
     },
     items: {
       irusGear: {
         description:
           "Irus Gear のためのフルスタックECサイトプロジェクトです。顧客向けインターフェースとバックエンドサービスを含みます。",
+      },
+      irusPortfolio: {
+        description:
+          "React 19、TypeScript、Vite、Tailwind CSS v4 で構築された個人ポートフォリオサイトです。多言語対応、ダークモード、ターミナル風デザインを特徴としています。",
+      },
+      irusWatch: {
+        description:
+          "腕時計販売のためのECサイトです。HTML、CSS、JavaScript で構築された、クリーンでレスポンシブなストアフロントデザインです。",
+      },
+      team2hand: {
+        description:
+          "中古品の売買のためのマーケットプレイスプラットフォームです。React、Express.js、MongoDB で構築されています。",
       },
     },
     card: {

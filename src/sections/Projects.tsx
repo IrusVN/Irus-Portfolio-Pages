@@ -40,6 +40,39 @@ function Projects() {
       githubUrl: "https://github.com/HoangMaiLapTrinh/irusgear-frontend",
       isSolo: true,
     },
+    {
+      title: "Team2hand",
+      year: 2025,
+      description: t("projects.items.team2hand.description"),
+      techStack: [t("projects.tags.fullstack"), t("projects.tags.frontend"), t("projects.tags.backend")],
+      imageUrl:
+        "https://opengraph.githubassets.com/1/IrusVN/BTL_WEB",
+      projectUrl: "https://github.com/IrusVN/BTL_WEB",
+      githubUrl: "https://github.com/IrusVN/BTL_WEB",
+      isSolo: false,
+    },
+    {
+      title: "Irus Watch",
+      year: 2024,
+      description: t("projects.items.irusWatch.description"),
+      techStack: [t("projects.tags.frontend")],
+      imageUrl:
+        "https://opengraph.githubassets.com/1/IrusVN/websitebandongho",
+      projectUrl: "https://github.com/IrusVN/websitebandongho",
+      githubUrl: "https://github.com/IrusVN/websitebandongho",
+      isSolo: false,
+    },
+    {
+      title: "Irus Portfolio Pages",
+      year: 2025,
+      description: t("projects.items.irusPortfolio.description"),
+      techStack: [t("projects.tags.frontend"), t("projects.tags.portfolio")],
+      imageUrl:
+        "https://opengraph.githubassets.com/1/HoangMaiLapTrinh/irus-portfolio-pages",
+      projectUrl: "https://hoangmailaptrinh.github.io/irus-portfolio-pages/",
+      githubUrl: "https://github.com/HoangMaiLapTrinh/irus-portfolio-pages",
+      isSolo: true,
+    },
   ];
 
   return (

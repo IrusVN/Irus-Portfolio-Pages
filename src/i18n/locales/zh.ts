@@ -41,11 +41,25 @@ export const zh: Dictionary = {
     tags: {
       frontend: "前端",
       backend: "后端",
+      fullstack: "全栈",
+      portfolio: "作品集",
     },
     items: {
       irusGear: {
         description:
           "为 Irus Gear 打造的全栈电商项目，涵盖面向客户的界面与后端服务。",
+      },
+      irusPortfolio: {
+        description:
+          "使用 React 19、TypeScript、Vite 和 Tailwind CSS v4 构建的个人作品集网站，支持多语言、深色模式和终端风格设计。",
+      },
+      irusWatch: {
+        description:
+          "一个手表销售电商网站，使用纯 HTML、CSS 和 JavaScript 构建，具有简洁的响应式店铺设计。",
+      },
+      team2hand: {
+        description:
+          "一个二手物品交易市场平台，使用 React、Express.js 和 MongoDB 构建。",
       },
     },
     card: {

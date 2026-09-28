@@ -41,11 +41,25 @@ export const ko: Dictionary = {
     tags: {
       frontend: "프론트엔드",
       backend: "백엔드",
+      fullstack: "풀스택",
+      portfolio: "포트폴리오",
     },
     items: {
       irusGear: {
         description:
           "Irus Gear를 위한 풀스택 이커머스 프로젝트로, 고객용 인터페이스와 백엔드 서비스를 포함합니다.",
+      },
+      irusPortfolio: {
+        description:
+          "React 19, TypeScript, Vite, Tailwind CSS v4로 구축된 개인 포트폴리오 웹사이트로, 다국어 지원, 다크 모드 및 터미널 스타일 디자인을 특징으로 합니다.",
+      },
+      irusWatch: {
+        description:
+          "시계 판매를 위한 이커머스 웹사이트로, 순수 HTML, CSS, JavaScript로 구축된 깔끔하고 반응형 스토어 디자인입니다.",
+      },
+      team2hand: {
+        description:
+          "중고 물품 거래를 위한 마켓플레이스 플랫폼으로, React, Express.js, MongoDB로 구축되었습니다.",
       },
     },
     card: {

@@ -41,11 +41,25 @@ export const en = {
     tags: {
       frontend: "Frontend",
       backend: "Backend",
+      fullstack: "Full-stack",
+      portfolio: "Portfolio",
     },
     items: {
       irusGear: {
         description:
           "A full-stack e-commerce project for Irus Gear, including the customer-facing interface and backend services.",
+      },
+      irusPortfolio: {
+        description:
+          "A personal portfolio website built with React 19, TypeScript, Vite and Tailwind CSS v4, featuring multilingual support, dark mode, and a terminal-inspired design.",
+      },
+      irusWatch: {
+        description:
+          "An e-commerce website for selling watches, built with vanilla HTML, CSS, and JavaScript with a clean, responsive storefront design.",
+      },
+      team2hand: {
+        description:
+          "A second-hand marketplace platform for buying and selling pre-owned items, built with React, Express.js, and MongoDB.",
       },
     },
     card: {

@@ -41,11 +41,25 @@ export const vi: Dictionary = {
     tags: {
       frontend: "Frontend",
       backend: "Backend",
+      fullstack: "Full-stack",
+      portfolio: "Portfolio",
     },
     items: {
       irusGear: {
         description:
           "Dự án thương mại điện tử full-stack cho Irus Gear, bao gồm giao diện dành cho khách hàng và các dịch vụ backend.",
+      },
+      irusPortfolio: {
+        description:
+          "Website portfolio cá nhân được xây dựng bằng React 19, TypeScript, Vite và Tailwind CSS v4, hỗ trợ đa ngôn ngữ, chế độ tối và thiết kế lấy cảm hứng từ terminal.",
+      },
+      irusWatch: {
+        description:
+          "Website thương mại điện tử bán đồng hồ, xây dựng bằng HTML, CSS và JavaScript thuần với thiết kế cửa hàng sạch sẽ và responsive.",
+      },
+      team2hand: {
+        description:
+          "Nền tảng chợ đồ cũ để mua bán các sản phẩm second-hand, xây dựng bằng React, Express.js và MongoDB.",
       },
     },
     card: {
